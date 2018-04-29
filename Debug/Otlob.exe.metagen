@@ -1,0 +1,92 @@
+  Otlob.AdminForm.resources - Embedded, ContainedInManifestFile, 
+  Otlob.AdminFormLogIn.resources - Embedded, ContainedInManifestFile, 
+  Otlob.AllOffers.resources - Embedded, ContainedInManifestFile, 
+  Otlob.AllRestaurants.resources - Embedded, ContainedInManifestFile, 
+  Otlob.Bill.resources - Embedded, ContainedInManifestFile, 
+  Otlob.FoodsName.resources - Embedded, ContainedInManifestFile, 
+  Otlob.Home.resources - Embedded, ContainedInManifestFile, 
+  Otlob.MyBills.resources - Embedded, ContainedInManifestFile, 
+  Otlob.OrderFood.resources - Embedded, ContainedInManifestFile, 
+  Otlob.Profile.resources - Embedded, ContainedInManifestFile, 
+  Otlob.ShowRestaurants.resources - Embedded, ContainedInManifestFile, 
+  Otlob.SignIn.resources - Embedded, ContainedInManifestFile, 
+  Otlob.SignUp.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Otlob, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Bunifu_UI_v1.52, Version=1.3.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Microsoft.VisualC.STLCLR, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Globals.GlobalClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean LogIn : Public, Static
+    System.String username : Public, Static
+    System.Windows.Forms.Form home : Public, Static
+    System.Windows.Forms.Form signin : Public, Static
+    System.Windows.Forms.Form signup : Public, Static
+    System.Windows.Forms.Form profile : Public, Static
+    System.Windows.Forms.Form showRestaurant : Public, Static
+    System.Windows.Forms.Form order : Public, Static
+    System.Windows.Forms.Form AdminFormLogIn : Public, Static
+    System.Windows.Forms.Form AdminForm : Public, Static
+    System.Windows.Forms.Form Bill : Public, Static
+    System.Windows.Forms.Form AllOffers : Public, Static
+    System.Windows.Forms.Form AllRestaurants : Public, Static
+    System.Windows.Forms.Form MyBills : Public, Static
+    System.Windows.Forms.Form FoodsName : Public, Static
+Class Otlob.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.AllOffers: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.AllRestaurants: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.Bill: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.FoodsName: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    convert_string_std_to_system(basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig
+Class Otlob.Home: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.ShowRestaurants: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.OrderFood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.AdminFormLogIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.MyBills: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8E846255-61D9-4246-B180-AD915318E43B}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>Otlob</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies />
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>D:\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="AdminForm.cpp" />
+    <ClCompile Include="AdminFormLogIn.cpp" />
+    <ClCompile Include="Admin_class.cpp" />
+    <ClCompile Include="AllOffers.cpp" />
+    <ClCompile Include="AllRestaurants.cpp" />
+    <ClCompile Include="Appetizers.cpp" />
+    <ClCompile Include="Bill.cpp" />
+    <ClCompile Include="Convert_strings.cpp" />
+    <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="Customer_Opinion.cpp" />
+    <ClCompile Include="Delivery_Boy.cpp" />
+    <ClCompile Include="Desserts.cpp" />
+    <ClCompile Include="Drinks.cpp" />
+    <ClCompile Include="Food.cpp" />
+    <ClCompile Include="FoodsName.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="Home.cpp" />
+    <ClCompile Include="MainMeal.cpp" />
+    <ClCompile Include="MyBills.cpp" />
+    <ClCompile Include="Order.cpp" />
+    <ClCompile Include="OrderFood.cpp" />
+    <ClCompile Include="pairr.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="Restraunt.cpp" />
+    <ClCompile Include="ShowRestaurants.cpp" />
+    <ClCompile Include="SideDishes.cpp" />
+    <ClCompile Include="SignIn.cpp" />
+    <ClCompile Include="SignUp.cpp" />
+    <ClCompile Include="User.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Admin.h" />
+    <ClInclude Include="AdminForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AdminFormLogIn.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Admin_class.h" />
+    <ClInclude Include="AllOffers.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AllRestaurants.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Appetizers.h" />
+    <ClInclude Include="Bill.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Convert_strings.h" />
+    <ClInclude Include="Customer.h" />
+    <ClInclude Include="Customer_Opinion.h" />
+    <ClInclude Include="Delivery_Boy.h" />
+    <ClInclude Include="Desserts.h" />
+    <ClInclude Include="Drinks.h" />
+    <ClInclude Include="Food.h" />
+    <ClInclude Include="FoodsName.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="Home.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MainMeal.h" />
+    <ClInclude Include="MyBills.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Order.h" />
+    <ClInclude Include="OrderFood.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="pairr.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Profile.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Restraunt.h" />
+    <ClInclude Include="ShowRestaurants.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SideDishes.h" />
+    <ClInclude Include="SignIn.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SignUp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="User.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminFormLogIn.resx">
+      <DependentUpon>AdminFormLogIn.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllOffers.resx">
+      <DependentUpon>AllOffers.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllRestaurants.resx">
+      <DependentUpon>AllRestaurants.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill.resx">
+      <DependentUpon>Bill.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodsName.resx">
+      <DependentUpon>FoodsName.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyBills.resx">
+      <DependentUpon>MyBills.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderFood.resx">
+      <DependentUpon>OrderFood.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowRestaurants.resx">
+      <DependentUpon>ShowRestaurants.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bunifuFlatButton1.Iconimage.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
