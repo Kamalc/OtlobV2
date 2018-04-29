@@ -1,10 +1,38 @@
-﻿  Admin.cpp
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MetaGen.targets(91,5): warning : Required file "F:\PROJECTS\PROJECT WITH CLASSES\OTLOB\DEBUG\BUNIFU_UI_V1.52.DLL" is missing.
+  Admin.cpp
+  AdminForm.cpp
+  AdminFormLogIn.cpp
   Admin_class.cpp
+  AllOffers.cpp
+  AllRestaurants.cpp
+  Appetizers.cpp
+  Bill.cpp
+  Convert_strings.cpp
   Customer.cpp
+  Customer_Opinion.cpp
+  Delivery_Boy.cpp
+  Desserts.cpp
+  Drinks.cpp
+  Food.cpp
+  FoodsName.cpp
+  Global.cpp
   Home.cpp
-  SignIn.cpp
-  User.cpp
-  pairr.cpp
+  MainMeal.cpp
+  MyBills.cpp
   Generating Code...
-  Otlob.vcxproj -> F:\Projects\Project with classes\Otlob\Debug\Otlob.exe
-  Otlob.vcxproj -> F:\Projects\Project with classes\Otlob\Debug\Otlob.pdb (Full PDB)
+  Compiling...
+  Order.cpp
+  OrderFood.cpp
+  pairr.cpp
+  Person.cpp
+  Profile.cpp
+  Restraunt.cpp
+  ShowRestaurants.cpp
+  SideDishes.cpp
+  SignIn.cpp
+  SignUp.cpp
+  User.cpp
+  Generating Code...
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\O7A\OtlobV2\Debug\Otlob.exe
+  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\O7A\OtlobV2\Debug\Otlob.pdb (Full PDB)
