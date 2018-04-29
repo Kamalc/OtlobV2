@@ -7,16 +7,15 @@ using namespace std;
 ref class User : public Person
 {
 protected:
-    String^ username;
+    String^ Username;
     String^ password;
     String^ email;
     String^ birthDate;
-	cliext::vector<String^> k;
 
 public:
     User();
-    User(String^ userName, String^ pass, String^ mail, String^ birthdate, String^ fName, String^ sName, String^ Phone);
-    String ^ SignIn(String^ User_name_input,String^ PassWord_input);
-
+    User(String^ username_, String^ password_, String^ email_, String^ birthdate_, String^ firstName_, String^ lastName_, String^ phone_);
+	void SignIn_Data(String^ username_, String^ password_);
+	String^ SignIn(std::string DataBase_Name);
 };
 

@@ -1,7 +1,10 @@
-﻿  Convert_strings.cpp
+﻿  Admin.cpp
+  Admin_class.cpp
+  Customer.cpp
   Home.cpp
-  Profile.cpp
+  SignIn.cpp
   User.cpp
+  pairr.cpp
   Generating Code...
-  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\Otlob\Debug\Otlob.exe
-  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\Otlob\Debug\Otlob.pdb (Full PDB)
+  Otlob.vcxproj -> F:\Projects\Project with classes\Otlob\Debug\Otlob.exe
+  Otlob.vcxproj -> F:\Projects\Project with classes\Otlob\Debug\Otlob.pdb (Full PDB)

@@ -923,8 +923,9 @@ namespace Otlob {
 		this->Hide();
 		 }
 private: System::Void button_SubmitSI_Click(System::Object^  sender, System::EventArgs^  e) {
-    User^ sign;
-    String^return_val = sign->SignIn(TextBox_Username->Text, Textbox_Password->Text);
+	User^ customer = gcnew User();
+	customer->SignIn_Data(TextBox_Username->Text, Textbox_Password->Text);
+    String^ return_val = customer->SignIn("Users.json");
     if (return_val == "LogIn")
     {
         TextBox_Username->Text = "";

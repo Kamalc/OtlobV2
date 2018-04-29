@@ -16,30 +16,35 @@ using namespace System::Windows::Forms;
 
 User::User()
 {
-    username = password = email = birthDate = "";
+    Username = password = email = birthDate = "";
 }
-User::User(String^ userName, String^ pass, String^ mail, String^ birthdate, String^ fName, String^ sName, String^ Phone) : Person(fName, sName, Phone)
+void User::SignIn_Data(String^ username_, String^ password_)
 {
-    username = userName;
-    password = pass;
-    email = mail;
-    birthDate = birthdate;
-	k = gcnew cliext::vector<String^>();
+	Username = username_;
+	password = password_;
+	email = birthDate = "";
 }
-String ^ User::SignIn(String^ User_name_input, String^ PassWord_input)
+User::User(String^ username_, String^ password_, String^ email_, String^ birthdate_, String^ firstName_, String^ lastName_, String^ phone_) : Person(firstName_, lastName_, phone_)
+{
+	Username = username_;
+    password = password_;
+    email = email_;
+    birthDate = birthdate_;
+}
+String^ User::SignIn(std::string DataBase_Name)
 {
 
-    ifstream i("Users.json");
+    ifstream i(DataBase_Name);
     json j;
     i >> j;
-    string UserName = Convert_strings::Convert(User_name_input);
-    string PassWord = Convert_strings::Convert(PassWord_input);
+    string UserName = Convert_strings::Convert_System_to_std(Username);
+    string PassWord = Convert_strings::Convert_System_to_std(password);
     if (j.find(UserName) != j.end())
     {
         if (j[UserName]["Password"] == PassWord)
         {
             GlobalClass::LogIn = true;
-            GlobalClass::username = User_name_input;
+            GlobalClass::username = Username;
             if (GlobalClass::LogIn == true) 
             {   
                 return("LogIn");

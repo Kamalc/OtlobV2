@@ -4,6 +4,7 @@
 #include "json.hpp"
 #include <msclr\marshal_cppstd.h>
 #include "Global.h"
+#include "Convert_strings.h"
 namespace Otlob {
 
 	using namespace System;
@@ -31,10 +32,7 @@ namespace Otlob {
 			//TODO: Add the constructor code here
 			//
 		}
-		String^ convert_string_std_to_system(std::string s)
-		{
-			return (gcnew String(s.c_str()));
-		}
+		
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -1167,14 +1165,14 @@ private: System::Void button_Close_Click(System::Object^  sender, System::EventA
 		i >> j;
 		String ^User_name_system = GlobalClass::username;
 		string Username = marshal_as<string>(User_name_system);
-		String^First =convert_string_std_to_system(j[Username]["Name"]["First"]);
-		String^Last= convert_string_std_to_system(j[Username]["Name"]["Last"]);
-		String^Email= convert_string_std_to_system(j[Username]["Email"]);
-		String^Password= convert_string_std_to_system(j[Username]["Password"]);
+		String^ First = Convert_strings::Convert_std_to_System(j[Username]["Name"]["First"]);
+		String^ Last = Convert_strings::Convert_std_to_System(j[Username]["Name"]["Last"]);
+		String^ Email = Convert_strings::Convert_std_to_System(j[Username]["Email"]);
+		String^ Password = Convert_strings::Convert_std_to_System(j[Username]["Password"]);
 /*		String^ Day= convert_string_std_to_system(j[Username]["Date Birth"]["Day"]);
 		String^ Month= convert_string_std_to_system(j[Username]["Date Birth"]["Month"]) ;
 		String^ Year= convert_string_std_to_system(j[Username]["Date Birth"]["Year"]);*/
-		String^ Phone= convert_string_std_to_system(j[Username]["Phone"]);
+		String^ Phone = Convert_strings::Convert_std_to_System(j[Username]["Phone"]);
 		
 		textBox_username->Text = GlobalClass::username;
 		textBox_FirstName->Text = First;
