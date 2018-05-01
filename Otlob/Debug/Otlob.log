@@ -1,6 +1,4 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MetaGen.targets(91,5): warning : Required file "F:\PROJECTS\PROJECT WITH CLASSES\OTLOB\DEBUG\BUNIFU_UI_V1.52.DLL" is missing.
-  Admin.cpp
-  AdminForm.cpp
+﻿  AdminForm.cpp
   AdminFormLogIn.cpp
   Admin_class.cpp
   AllOffers.cpp
@@ -17,22 +15,24 @@
   FoodsName.cpp
   Global.cpp
   Home.cpp
+e:\project\last work\otlob version s\otlob version2(not git)\project with classes_afterediting\otlob\otlob\ShowRestaurants.h(1200): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   MainMeal.cpp
   MyBills.cpp
+  Order.cpp
   Generating Code...
   Compiling...
-  Order.cpp
   OrderFood.cpp
   pairr.cpp
   Person.cpp
   Profile.cpp
   Restraunt.cpp
   ShowRestaurants.cpp
+e:\project\last work\otlob version s\otlob version2(not git)\project with classes_afterediting\otlob\otlob\ShowRestaurants.h(1200): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   SideDishes.cpp
   SignIn.cpp
   SignUp.cpp
   User.cpp
   Generating Code...
   .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
-  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\O7A\OtlobV2\Debug\Otlob.exe
-  Otlob.vcxproj -> C:\Users\Kamal Saad\Desktop\O7A\OtlobV2\Debug\Otlob.pdb (Full PDB)
+  Otlob.vcxproj -> E:\Project\Last work\Otlob Version S\Otlob version2(not git)\Project with classes_AfterEditing\Otlob\Debug\Otlob.exe
+  Otlob.vcxproj -> E:\Project\Last work\Otlob Version S\Otlob version2(not git)\Project with classes_AfterEditing\Otlob\Debug\Otlob.pdb (Full PDB)

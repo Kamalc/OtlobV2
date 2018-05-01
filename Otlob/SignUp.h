@@ -4,6 +4,7 @@
 #include "json.hpp"
 #include <msclr\marshal_cppstd.h>
 #include "Global.h"
+#include "Customer.h"
 namespace Otlob {
 
 	using namespace System;
@@ -1296,43 +1297,8 @@ namespace Otlob {
 		 }
 private: System::Void button_SubmitSU_Click(System::Object^  sender, System::EventArgs^  e) {
 
-    String^FirstName_input = textBox_FirstName->Text;
-    String^LastName_input = textBox_LastName->Text;
-    String^Username_input = bunifuMaterialTextbox1->Text;
-    String^Email_input = textBox_Email->Text;
-    String^Password_input = Textbox_Password->Text;
-    String^Phone_input = textBox_Phone->Text;
-    String^Day_input =Convert::ToString(bunifuDatepicker1->Value.Day);
-    String^Month_input = Convert::ToString(bunifuDatepicker1->Value.Month);
-    String^Year_input = Convert::ToString(bunifuDatepicker1->Value.Year);
-
-    // std::string 
-    string FirstName = marshal_as<string>(FirstName_input);
-    string LastName = marshal_as<string>(LastName_input);
-    string Username = marshal_as<string>(Username_input);
-    string Email = marshal_as<string>(Email_input);
-    string Password = marshal_as<string>(Password_input);
-    string Phone = marshal_as<string>(Phone_input);
-    string Day = marshal_as<string>(Day_input);
-    string Month = marshal_as<string>(Month_input);
-    string Year = marshal_as<string>(Year_input);
-
-       ifstream i("Users.json");
-       json j;
-       i >> j;
-       j[Username]["Name"]["First"] = FirstName;
-       j[Username]["Name"]["Last"] = LastName;
-       j[Username]["Email"]= Email;
-       j[Username]["Password"] = Password;
-       j[Username]["Date Birth"]["Day"] = Day;
-       j[Username]["Date Birth"]["Month"] = Month;
-       j[Username]["Date Birth"]["Year"]= Year;
-       j[Username]["Phone"] = Phone;
-	   
-       ofstream o("Users.json");
-       o << setw(4) << j << endl;
-    button_SubmitSU->Enabled = (!(j.find(marshal_as<string>(Username_input)) != j.end()));
-
+	Customer^ newCustomer = gcnew Customer(bunifuMaterialTextbox1->Text, Textbox_Password->Text, textBox_Email->Text, Convert::ToString(bunifuDatepicker1->Value.Day), Convert::ToString(bunifuDatepicker1->Value.Month), Convert::ToString(bunifuDatepicker1->Value.Year), textBox_FirstName->Text, textBox_LastName->Text, textBox_Phone->Text);
+	newCustomer->SignUp("Users.json");
 }
 private: System::Void pictureBox2_Click(System::Object^  sender, System::EventArgs^  e) {
 }

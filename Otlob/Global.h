@@ -1,6 +1,6 @@
 #pragma once
-
-
+#include "Convert_strings.h"
+#include<cliext\vector>
 namespace Globals
 {
 	using namespace System;
@@ -9,6 +9,8 @@ namespace Globals
     {
 	public: static bool LogIn;
 	public: static String^ username;
+	public: static String^ governate;
+	public: static String^ address;
 	public: static Form^ home;
 	public: static Form^ signin;
 	public: static Form^ signup;
@@ -22,8 +24,7 @@ namespace Globals
 	public: static Form^ AllRestaurants;
 	public: static Form^ MyBills;
 	public: static Form^ FoodsName;
-   
-            
+
     };
    
 }

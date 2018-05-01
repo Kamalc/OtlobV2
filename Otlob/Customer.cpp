@@ -1,5 +1,5 @@
 #include "Customer.h"
-#include "Person.h"
+#include "User.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -8,12 +8,6 @@ using namespace std;
 Customer::Customer()
 {
 }
-Customer::Customer(String^ username_, String^ password_, String^ email_, String^ birthdate_, String^ firstName_, String^ lastName_, String^ Phone) : User(username_, password_, email_, birthdate_, firstName_, lastName_, Phone)
-{
-}
-void Customer::SignIn()
-{
-}
-void Customer::SignUp()
+Customer::Customer(String^ username_, String^ password_, String^ email_, String^ day_, String^ month_, String^ year_, String^ firstName_, String^ lastName_, String^ Phone) : User(username_, password_, email_, day_, month_, year_, firstName_, lastName_, Phone)
 {
 }

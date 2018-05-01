@@ -1,6 +1,9 @@
 #pragma once
 #include "Global.h"
 #include "Bill.h"
+#include "Restraunt.h"
+#include <fstream>      
+#include "json.hpp"
 namespace Otlob {
 
 	using namespace System;
@@ -11,7 +14,9 @@ namespace Otlob {
 	using namespace System::Drawing;
 	using namespace Globals;
 	using namespace std;
-
+	using label_Food = System::Windows::Forms::Label;
+	using numericUpDown = System::Windows::Forms::NumericUpDown;
+	using checkBox = Bunifu::Framework::UI::BunifuCheckbox;
 	/// <summary>
 	/// Summary for OrderFood
 	/// </summary>
@@ -45,6 +50,8 @@ namespace Otlob {
 				delete components;
 			}
 		}
+	private: cliext::vector<Restraunt^>^ rests = gcnew cliext::vector<Restraunt^>();
+
 	private: System::Windows::Forms::Panel^  panel3;
 	protected:
 	private: Bunifu::Framework::UI::BunifuGradientPanel^  bunifuGradientPanel3;
@@ -76,17 +83,18 @@ namespace Otlob {
 	private: System::Windows::Forms::Label^  label_RestaurantName;
 	private: System::Windows::Forms::Label^  label1;
 
-	private: System::Windows::Forms::TableLayoutPanel^  tableLayoutPanel1;
-	private: System::Windows::Forms::FlowLayoutPanel^  flowLayoutPanel1;
+
+	private: System::Windows::Forms::FlowLayoutPanel^  Panel_MainMeal;
+
 
 
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::TableLayoutPanel^  tableLayoutPanel3;
-	private: System::Windows::Forms::TableLayoutPanel^  tableLayoutPanel4;
-	private: System::Windows::Forms::TableLayoutPanel^  tableLayoutPanel2;
+
+
+
 
 
 
@@ -95,8 +103,54 @@ namespace Otlob {
 	private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 
-	private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton5;
+
 	private: Bunifu::Framework::UI::BunifuFlatButton^  button_MakeOrder;
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::FlowLayoutPanel^  flowLayoutPanel2;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown3;
+	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox3;
+	private: System::Windows::Forms::FlowLayoutPanel^  flowLayoutPanel3;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
+	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox1;
+	private: System::Windows::Forms::FlowLayoutPanel^  flowLayoutPanel1;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown2;
+	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox2;
+private: System::Windows::Forms::FlowLayoutPanel^  Panel_Desert;
+private: System::Windows::Forms::FlowLayoutPanel^  Panel_Appetizers;
+
+private: System::Windows::Forms::FlowLayoutPanel^  Panel_SidePlates;
+private: System::Windows::Forms::FlowLayoutPanel^  Panel_Drinks;
+private: System::Windows::Forms::Label^  label10;
+private: System::Windows::Forms::Label^  label11;
+private: System::Windows::Forms::Label^  label12;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -144,18 +198,32 @@ namespace Otlob {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OrderFood::typeid));
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->Panel_Appetizers = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->Panel_SidePlates = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->Panel_Drinks = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->Panel_Desert = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button_MakeOrder = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
-			this->bunifuFlatButton5 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->Panel_MainMeal = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->flowLayoutPanel2 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->bunifuCheckbox3 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->flowLayoutPanel3 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->bunifuCheckbox1 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->bunifuCheckbox2 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
 			this->bunifuGradientPanel3 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
 			this->label_RestaurantName = (gcnew System::Windows::Forms::Label());
 			this->bunifuGradientPanel2 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
@@ -180,6 +248,13 @@ namespace Otlob {
 			this->button_AllRestuarants = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel3->SuspendLayout();
+			this->Panel_MainMeal->SuspendLayout();
+			this->flowLayoutPanel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
+			this->flowLayoutPanel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			this->flowLayoutPanel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			this->bunifuGradientPanel3->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->Panel_Header->SuspendLayout();
@@ -191,18 +266,17 @@ namespace Otlob {
 			// 
 			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->panel3->Controls->Add(this->Panel_Appetizers);
+			this->panel3->Controls->Add(this->Panel_SidePlates);
+			this->panel3->Controls->Add(this->Panel_Drinks);
+			this->panel3->Controls->Add(this->Panel_Desert);
 			this->panel3->Controls->Add(this->label6);
 			this->panel3->Controls->Add(this->label5);
 			this->panel3->Controls->Add(this->label4);
 			this->panel3->Controls->Add(this->button_MakeOrder);
-			this->panel3->Controls->Add(this->bunifuFlatButton5);
 			this->panel3->Controls->Add(this->label3);
 			this->panel3->Controls->Add(this->label1);
-			this->panel3->Controls->Add(this->tableLayoutPanel3);
-			this->panel3->Controls->Add(this->tableLayoutPanel4);
-			this->panel3->Controls->Add(this->tableLayoutPanel2);
-			this->panel3->Controls->Add(this->tableLayoutPanel1);
-			this->panel3->Controls->Add(this->flowLayoutPanel1);
+			this->panel3->Controls->Add(this->Panel_MainMeal);
 			this->panel3->Controls->Add(this->bunifuGradientPanel3);
 			this->panel3->Controls->Add(this->bunifuGradientPanel2);
 			this->panel3->Controls->Add(this->bunifuGradientPanel1);
@@ -214,10 +288,50 @@ namespace Otlob {
 			this->panel3->Size = System::Drawing::Size(960, 570);
 			this->panel3->TabIndex = 22;
 			// 
+			// Panel_Appetizers
+			// 
+			this->Panel_Appetizers->AutoScroll = true;
+			this->Panel_Appetizers->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->Panel_Appetizers->Location = System::Drawing::Point(576, 320);
+			this->Panel_Appetizers->Name = L"Panel_Appetizers";
+			this->Panel_Appetizers->Size = System::Drawing::Size(243, 163);
+			this->Panel_Appetizers->TabIndex = 12;
+			// 
+			// Panel_SidePlates
+			// 
+			this->Panel_SidePlates->AutoScroll = true;
+			this->Panel_SidePlates->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->Panel_SidePlates->Location = System::Drawing::Point(576, 117);
+			this->Panel_SidePlates->Name = L"Panel_SidePlates";
+			this->Panel_SidePlates->Size = System::Drawing::Size(243, 163);
+			this->Panel_SidePlates->TabIndex = 12;
+			// 
+			// Panel_Drinks
+			// 
+			this->Panel_Drinks->AutoScroll = true;
+			this->Panel_Drinks->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->Panel_Drinks->Location = System::Drawing::Point(276, 320);
+			this->Panel_Drinks->Name = L"Panel_Drinks";
+			this->Panel_Drinks->Size = System::Drawing::Size(243, 163);
+			this->Panel_Drinks->TabIndex = 12;
+			// 
+			// Panel_Desert
+			// 
+			this->Panel_Desert->AutoScroll = true;
+			this->Panel_Desert->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->Panel_Desert->Location = System::Drawing::Point(276, 118);
+			this->Panel_Desert->Name = L"Panel_Desert";
+			this->Panel_Desert->Size = System::Drawing::Size(243, 163);
+			this->Panel_Desert->TabIndex = 12;
+			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(271, 291);
+			this->label6->Location = System::Drawing::Point(271, 294);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(67, 25);
 			this->label6->TabIndex = 4;
@@ -226,7 +340,7 @@ namespace Otlob {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(571, 291);
+			this->label5->Location = System::Drawing::Point(571, 294);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(105, 25);
 			this->label5->TabIndex = 4;
@@ -235,7 +349,7 @@ namespace Otlob {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(571, 89);
+			this->label4->Location = System::Drawing::Point(571, 92);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(111, 25);
 			this->label4->TabIndex = 4;
@@ -251,7 +365,7 @@ namespace Otlob {
 			this->button_MakeOrder->ButtonText = L"Order";
 			this->button_MakeOrder->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button_MakeOrder->DisabledColor = System::Drawing::Color::Transparent;
-			this->button_MakeOrder->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->button_MakeOrder->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button_MakeOrder->ForeColor = System::Drawing::Color::CornflowerBlue;
 			this->button_MakeOrder->Iconcolor = System::Drawing::Color::Transparent;
@@ -266,7 +380,7 @@ namespace Otlob {
 			this->button_MakeOrder->IconVisible = true;
 			this->button_MakeOrder->IconZoom = 80;
 			this->button_MakeOrder->IsTab = false;
-			this->button_MakeOrder->Location = System::Drawing::Point(455, 505);
+			this->button_MakeOrder->Location = System::Drawing::Point(194, 505);
 			this->button_MakeOrder->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->button_MakeOrder->Name = L"button_MakeOrder";
 			this->button_MakeOrder->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
@@ -274,62 +388,20 @@ namespace Otlob {
 			this->button_MakeOrder->OnHovercolor = System::Drawing::Color::AntiqueWhite;
 			this->button_MakeOrder->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button_MakeOrder->selected = false;
-			this->button_MakeOrder->Size = System::Drawing::Size(364, 56);
+			this->button_MakeOrder->Size = System::Drawing::Size(488, 56);
 			this->button_MakeOrder->TabIndex = 11;
 			this->button_MakeOrder->Text = L"Order";
 			this->button_MakeOrder->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->button_MakeOrder->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->button_MakeOrder->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->button_MakeOrder->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.8F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button_MakeOrder->Click += gcnew System::EventHandler(this, &OrderFood::button_MakeOrder_Click_1);
-			// 
-			// bunifuFlatButton5
-			// 
-			this->bunifuFlatButton5->Activecolor = System::Drawing::Color::Maroon;
-			this->bunifuFlatButton5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuFlatButton5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuFlatButton5->BorderRadius = 0;
-			this->bunifuFlatButton5->ButtonText = L"Clear";
-			this->bunifuFlatButton5->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuFlatButton5->DisabledColor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->bunifuFlatButton5->ForeColor = System::Drawing::Color::CornflowerBlue;
-			this->bunifuFlatButton5->Iconcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton5->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton5.Iconimage")));
-			this->bunifuFlatButton5->Iconimage_right = nullptr;
-			this->bunifuFlatButton5->Iconimage_right_Selected = nullptr;
-			this->bunifuFlatButton5->Iconimage_Selected = nullptr;
-			this->bunifuFlatButton5->IconMarginLeft = 0;
-			this->bunifuFlatButton5->IconMarginRight = 0;
-			this->bunifuFlatButton5->IconRightVisible = true;
-			this->bunifuFlatButton5->IconRightZoom = 0;
-			this->bunifuFlatButton5->IconVisible = true;
-			this->bunifuFlatButton5->IconZoom = 80;
-			this->bunifuFlatButton5->IsTab = false;
-			this->bunifuFlatButton5->Location = System::Drawing::Point(209, 505);
-			this->bunifuFlatButton5->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
-			this->bunifuFlatButton5->Name = L"bunifuFlatButton5";
-			this->bunifuFlatButton5->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuFlatButton5->OnHovercolor = System::Drawing::Color::AntiqueWhite;
-			this->bunifuFlatButton5->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
-			this->bunifuFlatButton5->selected = false;
-			this->bunifuFlatButton5->Size = System::Drawing::Size(234, 56);
-			this->bunifuFlatButton5->TabIndex = 11;
-			this->bunifuFlatButton5->Text = L"Clear";
-			this->bunifuFlatButton5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->bunifuFlatButton5->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->bunifuFlatButton5->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(271, 89);
+			this->label3->Location = System::Drawing::Point(271, 92);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(69, 25);
 			this->label3->TabIndex = 4;
@@ -338,78 +410,190 @@ namespace Otlob {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(3, 89);
+			this->label1->Location = System::Drawing::Point(3, 92);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(103, 25);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Main Meal";
 			// 
-			// tableLayoutPanel3
+			// Panel_MainMeal
 			// 
-			this->tableLayoutPanel3->ColumnCount = 2;
-			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel3->Location = System::Drawing::Point(276, 319);
-			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
-			this->tableLayoutPanel3->RowCount = 2;
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.10345F)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 81.89655F)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(243, 164);
-			this->tableLayoutPanel3->TabIndex = 3;
+			this->Panel_MainMeal->AutoScroll = true;
+			this->Panel_MainMeal->Controls->Add(this->flowLayoutPanel2);
+			this->Panel_MainMeal->Controls->Add(this->flowLayoutPanel3);
+			this->Panel_MainMeal->Controls->Add(this->flowLayoutPanel1);
+			this->Panel_MainMeal->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->Panel_MainMeal->Location = System::Drawing::Point(10, 117);
+			this->Panel_MainMeal->Name = L"Panel_MainMeal";
+			this->Panel_MainMeal->Size = System::Drawing::Size(241, 366);
+			this->Panel_MainMeal->TabIndex = 2;
+			this->Panel_MainMeal->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &OrderFood::Panel_MainMeal_Paint);
 			// 
-			// tableLayoutPanel4
+			// flowLayoutPanel2
 			// 
-			this->tableLayoutPanel4->ColumnCount = 2;
-			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel4->Location = System::Drawing::Point(576, 319);
-			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
-			this->tableLayoutPanel4->RowCount = 2;
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.10345F)));
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 81.89655F)));
-			this->tableLayoutPanel4->Size = System::Drawing::Size(243, 164);
-			this->tableLayoutPanel4->TabIndex = 3;
+			this->flowLayoutPanel2->AutoSize = true;
+			this->flowLayoutPanel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->flowLayoutPanel2->Controls->Add(this->label9);
+			this->flowLayoutPanel2->Controls->Add(this->numericUpDown3);
+			this->flowLayoutPanel2->Controls->Add(this->label10);
+			this->flowLayoutPanel2->Controls->Add(this->bunifuCheckbox3);
+			this->flowLayoutPanel2->Location = System::Drawing::Point(3, 3);
+			this->flowLayoutPanel2->Name = L"flowLayoutPanel2";
+			this->flowLayoutPanel2->Size = System::Drawing::Size(217, 52);
+			this->flowLayoutPanel2->TabIndex = 5;
 			// 
-			// tableLayoutPanel2
+			// label9
 			// 
-			this->tableLayoutPanel2->ColumnCount = 2;
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel2->Location = System::Drawing::Point(576, 117);
-			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
-			this->tableLayoutPanel2->RowCount = 2;
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.10345F)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 81.89655F)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(243, 164);
-			this->tableLayoutPanel2->TabIndex = 3;
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(3, 0);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(60, 25);
+			this->label9->TabIndex = 0;
+			this->label9->Text = L"Pizza";
 			// 
-			// tableLayoutPanel1
+			// numericUpDown3
 			// 
-			this->tableLayoutPanel1->ColumnCount = 2;
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->Location = System::Drawing::Point(276, 117);
-			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->RowCount = 2;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.10345F)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 81.89655F)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(243, 164);
-			this->tableLayoutPanel1->TabIndex = 3;
+			this->numericUpDown3->Location = System::Drawing::Point(69, 3);
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(53, 30);
+			this->numericUpDown3->TabIndex = 2;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->ForeColor = System::Drawing::Color::Maroon;
+			this->label10->Location = System::Drawing::Point(128, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(34, 25);
+			this->label10->TabIndex = 7;
+			this->label10->Text = L"5$";
+			this->label10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// bunifuCheckbox3
+			// 
+			this->bunifuCheckbox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuCheckbox3->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuCheckbox3->Checked = false;
+			this->bunifuCheckbox3->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->bunifuCheckbox3->ForeColor = System::Drawing::Color::White;
+			this->bunifuCheckbox3->Location = System::Drawing::Point(179, 14);
+			this->bunifuCheckbox3->Margin = System::Windows::Forms::Padding(14);
+			this->bunifuCheckbox3->Name = L"bunifuCheckbox3";
+			this->bunifuCheckbox3->Size = System::Drawing::Size(20, 20);
+			this->bunifuCheckbox3->TabIndex = 3;
+			// 
+			// flowLayoutPanel3
+			// 
+			this->flowLayoutPanel3->AutoSize = true;
+			this->flowLayoutPanel3->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->flowLayoutPanel3->Controls->Add(this->label7);
+			this->flowLayoutPanel3->Controls->Add(this->numericUpDown1);
+			this->flowLayoutPanel3->Controls->Add(this->label12);
+			this->flowLayoutPanel3->Controls->Add(this->bunifuCheckbox1);
+			this->flowLayoutPanel3->Location = System::Drawing::Point(3, 61);
+			this->flowLayoutPanel3->Name = L"flowLayoutPanel3";
+			this->flowLayoutPanel3->Size = System::Drawing::Size(199, 77);
+			this->flowLayoutPanel3->TabIndex = 5;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(3, 0);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(189, 25);
+			this->label7->TabIndex = 6;
+			this->label7->Text = L"Chilis Mall Of Arabia";
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->Location = System::Drawing::Point(3, 28);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(49, 30);
+			this->numericUpDown1->TabIndex = 2;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->ForeColor = System::Drawing::Color::Maroon;
+			this->label12->Location = System::Drawing::Point(58, 25);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(34, 25);
+			this->label12->TabIndex = 7;
+			this->label12->Text = L"5$";
+			this->label12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// bunifuCheckbox1
+			// 
+			this->bunifuCheckbox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuCheckbox1->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuCheckbox1->Checked = false;
+			this->bunifuCheckbox1->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->bunifuCheckbox1->ForeColor = System::Drawing::Color::White;
+			this->bunifuCheckbox1->Location = System::Drawing::Point(109, 39);
+			this->bunifuCheckbox1->Margin = System::Windows::Forms::Padding(14);
+			this->bunifuCheckbox1->Name = L"bunifuCheckbox1";
+			this->bunifuCheckbox1->Size = System::Drawing::Size(20, 20);
+			this->bunifuCheckbox1->TabIndex = 3;
 			// 
 			// flowLayoutPanel1
 			// 
-			this->flowLayoutPanel1->Location = System::Drawing::Point(10, 117);
+			this->flowLayoutPanel1->AutoSize = true;
+			this->flowLayoutPanel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->flowLayoutPanel1->Controls->Add(this->label8);
+			this->flowLayoutPanel1->Controls->Add(this->numericUpDown2);
+			this->flowLayoutPanel1->Controls->Add(this->label11);
+			this->flowLayoutPanel1->Controls->Add(this->bunifuCheckbox2);
+			this->flowLayoutPanel1->Location = System::Drawing::Point(3, 144);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(234, 366);
-			this->flowLayoutPanel1->TabIndex = 2;
+			this->flowLayoutPanel1->Size = System::Drawing::Size(198, 102);
+			this->flowLayoutPanel1->TabIndex = 5;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(3, 0);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(188, 50);
+			this->label8->TabIndex = 6;
+			this->label8->Text = L"Mashed Potato with Black Pepper Gravy";
+			// 
+			// numericUpDown2
+			// 
+			this->numericUpDown2->Location = System::Drawing::Point(3, 53);
+			this->numericUpDown2->Name = L"numericUpDown2";
+			this->numericUpDown2->Size = System::Drawing::Size(49, 30);
+			this->numericUpDown2->TabIndex = 2;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->ForeColor = System::Drawing::Color::Maroon;
+			this->label11->Location = System::Drawing::Point(58, 50);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(34, 25);
+			this->label11->TabIndex = 7;
+			this->label11->Text = L"5$";
+			this->label11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// bunifuCheckbox2
+			// 
+			this->bunifuCheckbox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuCheckbox2->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuCheckbox2->Checked = false;
+			this->bunifuCheckbox2->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->bunifuCheckbox2->ForeColor = System::Drawing::Color::White;
+			this->bunifuCheckbox2->Location = System::Drawing::Point(109, 64);
+			this->bunifuCheckbox2->Margin = System::Windows::Forms::Padding(14);
+			this->bunifuCheckbox2->Name = L"bunifuCheckbox2";
+			this->bunifuCheckbox2->Size = System::Drawing::Size(20, 20);
+			this->bunifuCheckbox2->TabIndex = 3;
 			// 
 			// bunifuGradientPanel3
 			// 
@@ -895,7 +1079,6 @@ namespace Otlob {
 			this->button_MyBills->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_MyBills->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-//			this->button_MyBills->Click += gcnew System::EventHandler(this, &OrderFood::button_MyBills_Click);
 			// 
 			// button_AllOffers
 			// 
@@ -937,7 +1120,6 @@ namespace Otlob {
 			this->button_AllOffers->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllOffers->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-//			this->button_AllOffers->Click += gcnew System::EventHandler(this, &OrderFood::button_AllOffers_Click);
 			// 
 			// button_AllFoods
 			// 
@@ -979,7 +1161,6 @@ namespace Otlob {
 			this->button_AllFoods->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllFoods->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-//			this->button_AllFoods->Click += gcnew System::EventHandler(this, &OrderFood::button_AllFoods_Click);
 			// 
 			// button_AllRestuarants
 			// 
@@ -1021,7 +1202,6 @@ namespace Otlob {
 			this->button_AllRestuarants->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllRestuarants->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-	//		this->button_AllRestuarants->Click += gcnew System::EventHandler(this, &OrderFood::button_AllRestuarants_Click);
 			// 
 			// label2
 			// 
@@ -1055,8 +1235,20 @@ namespace Otlob {
 			this->Name = L"OrderFood";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"OrderFood";
+			this->Load += gcnew System::EventHandler(this, &OrderFood::OrderFood_Load);
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
+			this->Panel_MainMeal->ResumeLayout(false);
+			this->Panel_MainMeal->PerformLayout();
+			this->flowLayoutPanel2->ResumeLayout(false);
+			this->flowLayoutPanel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
+			this->flowLayoutPanel3->ResumeLayout(false);
+			this->flowLayoutPanel3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			this->flowLayoutPanel1->ResumeLayout(false);
+			this->flowLayoutPanel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			this->bunifuGradientPanel3->ResumeLayout(false);
 			this->bunifuGradientPanel3->PerformLayout();
 			this->panel1->ResumeLayout(false);
@@ -1139,5 +1331,161 @@ private: System::Void buttton_AllOffers_Click(System::Object^  sender, System::E
 private: System::Void button_MyBills_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::MyBills->ShowDialog();
 }*/
+
+
+
+private: System::Void Panel_MainMeal_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+
+
+}
+
+private: System::Void OrderFood_Load(System::Object^  sender, System::EventArgs^  e) {
+	//Restraunt^ temp;
+	//Convert_strings tmp;
+	//	temp = gcnew Restraunt("Restaurant", "Cairo", "6th of October Hosary and Ahyaa", 60);
+	//	ifstream i("Restraunt.json");
+	//	json file;
+	//	i >> file;
+	//	json area = file["Cairo"]["6th of October Hosary and Ahyaa"];
+	//		json path = area["Food"]["Main Meal"];
+	//		temp->fill_MainMeal(path, /*tmp.Convert_std_to_System*/(temp->name));
+	//		//MessageBox::Show(temp->mainMeal[1]->name + " " + temp->mainMeal[1]->name);
+	for (int i = 0; i < 10; ++i) {
+		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
+		panelEachFood->AutoSize = true;
+		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+		panelEachFood->Location = System::Drawing::Point(3, 49);
+		//this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
+		panelEachFood->Size = System::Drawing::Size(231, 44);
+		panelEachFood->TabIndex = 5;
+		label_Food^ label_f = gcnew label_Food();
+		numericUpDown^ numeric_Updown = gcnew numericUpDown();
+		label_Food^ label_price = gcnew label_Food();
+		checkBox^ check_b = gcnew checkBox();
+		//label_f->Text = L"Pizza";
+		label_f->Text = "pizza";
+		label_price->Text = L"6$";
+		label_price->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		numeric_Updown->Size = System::Drawing::Size(53, 30);
+		check_b->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		check_b->Checked = false;
+		check_b->CheckedOnColor = System::Drawing::Color::Maroon;
+		panelEachFood->Controls->Add(label_f);
+		panelEachFood->Controls->Add(numeric_Updown);
+		panelEachFood->Controls->Add(label_price);
+		panelEachFood->Controls->Add(check_b);
+		this->Panel_MainMeal->Controls->Add(panelEachFood);
+	}
+	for (int i = 0; i < 10; ++i) {
+		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
+		panelEachFood->AutoSize = true;
+		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+		panelEachFood->Location = System::Drawing::Point(3, 49);
+		//this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
+		panelEachFood->Size = System::Drawing::Size(231, 44);
+		panelEachFood->TabIndex = 5;
+		label_Food^ label_f = gcnew label_Food();
+		numericUpDown^ numeric_Updown = gcnew numericUpDown();
+		label_Food^ label_price = gcnew label_Food();
+		checkBox^ check_b = gcnew checkBox();
+		label_f->Text = L"Pizza";
+		label_price->Text = L"6$";
+		label_price->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		numeric_Updown->Size = System::Drawing::Size(53, 30);
+		check_b->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		check_b->Checked = false;
+		check_b->CheckedOnColor = System::Drawing::Color::Maroon;
+		panelEachFood->Controls->Add(label_f);
+		panelEachFood->Controls->Add(numeric_Updown);
+		panelEachFood->Controls->Add(label_price);
+		panelEachFood->Controls->Add(check_b);
+		this->Panel_Desert->Controls->Add(panelEachFood);
+	}
+	for (int i = 0; i < 10; ++i) {
+		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
+		panelEachFood->AutoSize = true;
+		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+		panelEachFood->Location = System::Drawing::Point(3, 49);
+		//this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
+		panelEachFood->Size = System::Drawing::Size(231, 44);
+		panelEachFood->TabIndex = 5;
+		label_Food^ label_f = gcnew label_Food();
+		numericUpDown^ numeric_Updown = gcnew numericUpDown();
+		label_Food^ label_price = gcnew label_Food();
+		checkBox^ check_b = gcnew checkBox();
+		label_f->Text = L"Pizza";
+		label_price->Text = L"6$";
+		label_price->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		numeric_Updown->Size = System::Drawing::Size(53, 30);
+		check_b->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		check_b->Checked = false;
+		check_b->CheckedOnColor = System::Drawing::Color::Maroon;
+		panelEachFood->Controls->Add(label_f);
+		panelEachFood->Controls->Add(numeric_Updown);
+		panelEachFood->Controls->Add(label_price);
+		panelEachFood->Controls->Add(check_b);
+		this->Panel_SidePlates->Controls->Add(panelEachFood);
+	}
+	for (int i = 0; i < 10; ++i) {
+		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
+		panelEachFood->AutoSize = true;
+		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+		panelEachFood->Location = System::Drawing::Point(3, 49);
+		//this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
+		panelEachFood->Size = System::Drawing::Size(231, 44);
+		panelEachFood->TabIndex = 5;
+		label_Food^ label_f = gcnew label_Food();
+		numericUpDown^ numeric_Updown = gcnew numericUpDown();
+		label_Food^ label_price = gcnew label_Food();
+		checkBox^ check_b = gcnew checkBox();
+		label_f->Text = L"Pizza";
+		label_price->Text = L"6$";
+		label_price->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		numeric_Updown->Size = System::Drawing::Size(53, 30);
+		check_b->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		check_b->Checked = false;
+		check_b->CheckedOnColor = System::Drawing::Color::Maroon;
+		panelEachFood->Controls->Add(label_f);
+		panelEachFood->Controls->Add(numeric_Updown);
+		panelEachFood->Controls->Add(label_price);
+		panelEachFood->Controls->Add(check_b);
+		this->Panel_Drinks->Controls->Add(panelEachFood);
+	}
+	for (int i = 0; i < 10; ++i) {
+		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
+		panelEachFood->AutoSize = true;
+		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+		panelEachFood->Location = System::Drawing::Point(3, 49);
+		//this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
+		panelEachFood->Size = System::Drawing::Size(231, 44);
+		panelEachFood->TabIndex = 5;
+		label_Food^ label_f = gcnew label_Food();
+		numericUpDown^ numeric_Updown = gcnew numericUpDown();
+		label_Food^ label_price = gcnew label_Food();
+		checkBox^ check_b = gcnew checkBox();
+		label_f->Text = L"Pizza";
+		label_price->Text = L"6$";
+		label_price->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		numeric_Updown->Size = System::Drawing::Size(53, 30);
+		check_b->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		check_b->Checked = false;
+		check_b->CheckedOnColor = System::Drawing::Color::Maroon;
+		panelEachFood->Controls->Add(label_f);
+		panelEachFood->Controls->Add(numeric_Updown);
+		panelEachFood->Controls->Add(label_price);
+		panelEachFood->Controls->Add(check_b);
+		this->Panel_Appetizers->Controls->Add(panelEachFood);
+	}
+}
 };
 }

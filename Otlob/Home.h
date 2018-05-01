@@ -1,7 +1,13 @@
 #pragma once
 #include "Global.h"
 #include "Profile.h"
-
+#include <fstream>      
+#include "json.hpp"
+#include <cstdlib>
+#include "Convert_strings.h"
+#include "Restraunt.h"
+#include "MainMeal.h"
+#include"ShowRestaurants.h"
 namespace Otlob {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -30,11 +36,11 @@ namespace Otlob {
 				Button_Profile->Visible = true;
 				button_SignOut->Visible = true;
 			}			//GlobalClass::profile = p;
-			//
-			//TODO: Add the constructor code here
-			//
+						//
+						//TODO: Add the constructor code here
+						//
 		}
-		
+
 
 	protected:
 		/// <summary>
@@ -48,7 +54,7 @@ namespace Otlob {
 			}
 		}
 
-	protected: 
+	protected:
 
 	private: bool dragging;
 	private: Point offset;
@@ -73,7 +79,8 @@ namespace Otlob {
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Panel^  panel3;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  Button_ShowRs;
-	private: System::Windows::Forms::ComboBox^  comboBox2;
+	private: System::Windows::Forms::ComboBox^  comboBox_Address;
+
 	private: System::Windows::Forms::ComboBox^  comboBox1;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label_UsernameN;
@@ -130,8 +137,8 @@ namespace Otlob {
 	private: System::Windows::Forms::PictureBox^  pictureBox16;
 	private: System::Windows::Forms::PictureBox^  pictureBox15;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton5;
-private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
-private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 
 
 
@@ -147,10 +154,10 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 
 
 
-	protected: 
+	protected:
 
 
-	protected: 
+	protected:
 
 	private:
 		/// <summary>
@@ -219,7 +226,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->Button_ShowRs = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox_Address = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
@@ -301,7 +308,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->bunifuFlatButton5->IconZoom = 80;
 			this->bunifuFlatButton5->IsTab = false;
 			this->bunifuFlatButton5->Location = System::Drawing::Point(0, 576);
-			this->bunifuFlatButton5->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->bunifuFlatButton5->Margin = System::Windows::Forms::Padding(6);
 			this->bunifuFlatButton5->Name = L"bunifuFlatButton5";
 			this->bunifuFlatButton5->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -343,7 +350,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->button_MyBills->IconZoom = 80;
 			this->button_MyBills->IsTab = false;
 			this->button_MyBills->Location = System::Drawing::Point(0, 439);
-			this->button_MyBills->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_MyBills->Margin = System::Windows::Forms::Padding(6);
 			this->button_MyBills->Name = L"button_MyBills";
 			this->button_MyBills->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -385,7 +392,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->buttton_AllOffers->IconZoom = 80;
 			this->buttton_AllOffers->IsTab = false;
 			this->buttton_AllOffers->Location = System::Drawing::Point(0, 366);
-			this->buttton_AllOffers->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->buttton_AllOffers->Margin = System::Windows::Forms::Padding(6);
 			this->buttton_AllOffers->Name = L"buttton_AllOffers";
 			this->buttton_AllOffers->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -427,7 +434,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->buttton_Foods->IconZoom = 80;
 			this->buttton_Foods->IsTab = false;
 			this->buttton_Foods->Location = System::Drawing::Point(0, 291);
-			this->buttton_Foods->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->buttton_Foods->Margin = System::Windows::Forms::Padding(6);
 			this->buttton_Foods->Name = L"buttton_Foods";
 			this->buttton_Foods->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -469,7 +476,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->button_AllRestaurants->IconZoom = 80;
 			this->button_AllRestaurants->IsTab = false;
 			this->button_AllRestaurants->Location = System::Drawing::Point(0, 216);
-			this->button_AllRestaurants->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_AllRestaurants->Margin = System::Windows::Forms::Padding(6);
 			this->button_AllRestaurants->Name = L"button_AllRestaurants";
 			this->button_AllRestaurants->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -496,7 +503,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->label2->Location = System::Drawing::Point(26, 23);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(197, 105);
+			this->label2->Size = System::Drawing::Size(155, 83);
 			this->label2->TabIndex = 10;
 			this->label2->Text = L"OTlob";
 			this->label2->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::panel1_MouseDown);
@@ -529,7 +536,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->Button_SignUp->IconZoom = 50;
 			this->Button_SignUp->IsTab = false;
 			this->Button_SignUp->Location = System::Drawing::Point(550, -1);
-			this->Button_SignUp->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Button_SignUp->Margin = System::Windows::Forms::Padding(6);
 			this->Button_SignUp->Name = L"Button_SignUp";
 			this->Button_SignUp->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -571,7 +578,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->button_SignIn->IconZoom = 50;
 			this->button_SignIn->IsTab = false;
 			this->button_SignIn->Location = System::Drawing::Point(718, -1);
-			this->button_SignIn->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_SignIn->Margin = System::Windows::Forms::Padding(6);
 			this->button_SignIn->Name = L"button_SignIn";
 			this->button_SignIn->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -682,7 +689,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->button_SignOut->IconZoom = 90;
 			this->button_SignOut->IsTab = false;
 			this->button_SignOut->Location = System::Drawing::Point(66, -1);
-			this->button_SignOut->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_SignOut->Margin = System::Windows::Forms::Padding(6);
 			this->button_SignOut->Name = L"button_SignOut";
 			this->button_SignOut->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -706,7 +713,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->label_Username->Location = System::Drawing::Point(812, 18);
 			this->label_Username->Name = L"label_Username";
-			this->label_Username->Size = System::Drawing::Size(0, 25);
+			this->label_Username->Size = System::Drawing::Size(0, 20);
 			this->label_Username->TabIndex = 0;
 			// 
 			// label_UsernameN
@@ -718,7 +725,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->label_UsernameN->Location = System::Drawing::Point(709, 18);
 			this->label_UsernameN->Name = L"label_UsernameN";
-			this->label_UsernameN->Size = System::Drawing::Size(120, 25);
+			this->label_UsernameN->Size = System::Drawing::Size(98, 20);
 			this->label_UsernameN->TabIndex = 0;
 			this->label_UsernameN->Text = L"username :";
 			this->label_UsernameN->Visible = false;
@@ -750,7 +757,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->Button_Profile->IconZoom = 70;
 			this->Button_Profile->IsTab = false;
 			this->Button_Profile->Location = System::Drawing::Point(550, -1);
-			this->Button_Profile->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Button_Profile->Margin = System::Windows::Forms::Padding(6);
 			this->Button_Profile->Name = L"Button_Profile";
 			this->Button_Profile->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -804,7 +811,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->panel3->Controls->Add(this->pictureBox3);
 			this->panel3->Controls->Add(this->pictureBox2);
 			this->panel3->Controls->Add(this->Button_ShowRs);
-			this->panel3->Controls->Add(this->comboBox2);
+			this->panel3->Controls->Add(this->comboBox_Address);
 			this->panel3->Controls->Add(this->comboBox1);
 			this->panel3->Controls->Add(this->label1);
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -814,6 +821,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(960, 570);
 			this->panel3->TabIndex = 10;
+			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Home::panel3_Paint);
 			// 
 			// label13
 			// 
@@ -822,7 +830,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label13->Location = System::Drawing::Point(473, 515);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(119, 25);
+			this->label13->Size = System::Drawing::Size(95, 20);
 			this->label13->TabIndex = 15;
 			this->label13->Text = L"Sandwiches";
 			// 
@@ -833,7 +841,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label12->Location = System::Drawing::Point(473, 485);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(100, 25);
+			this->label12->Size = System::Drawing::Size(82, 20);
 			this->label12->TabIndex = 15;
 			this->label12->Text = L"Fast Food";
 			// 
@@ -844,7 +852,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label11->Location = System::Drawing::Point(473, 455);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(116, 25);
+			this->label11->Size = System::Drawing::Size(93, 20);
 			this->label11->TabIndex = 15;
 			this->label11->Text = L"Shawermas";
 			// 
@@ -855,7 +863,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label10->Location = System::Drawing::Point(473, 425);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(117, 25);
+			this->label10->Size = System::Drawing::Size(94, 20);
 			this->label10->TabIndex = 15;
 			this->label10->Text = L"Japan Food";
 			// 
@@ -866,7 +874,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label9->Location = System::Drawing::Point(255, 515);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(80, 25);
+			this->label9->Size = System::Drawing::Size(64, 20);
 			this->label9->TabIndex = 15;
 			this->label9->Text = L"Oriental";
 			// 
@@ -877,7 +885,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(255, 485);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(60, 25);
+			this->label8->Size = System::Drawing::Size(47, 20);
 			this->label8->TabIndex = 15;
 			this->label8->Text = L"Pizza";
 			// 
@@ -888,7 +896,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(255, 455);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(91, 25);
+			this->label7->Size = System::Drawing::Size(74, 20);
 			this->label7->TabIndex = 15;
 			this->label7->Text = L"Sea food";
 			// 
@@ -899,7 +907,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(255, 425);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(45, 25);
+			this->label6->Size = System::Drawing::Size(36, 20);
 			this->label6->TabIndex = 15;
 			this->label6->Text = L"Grill";
 			// 
@@ -1220,7 +1228,7 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->Button_ShowRs->IconZoom = 50;
 			this->Button_ShowRs->IsTab = false;
 			this->Button_ShowRs->Location = System::Drawing::Point(583, 352);
-			this->Button_ShowRs->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Button_ShowRs->Margin = System::Windows::Forms::Padding(6);
 			this->Button_ShowRs->Name = L"Button_ShowRs";
 			this->Button_ShowRs->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -1236,21 +1244,21 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->Button_ShowRs->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
 			this->Button_ShowRs->Click += gcnew System::EventHandler(this, &Home::Button_ShowRs_Click);
 			// 
-			// comboBox2
+			// comboBox_Address
 			// 
-			this->comboBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->comboBox2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
-				static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(327, 352);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(227, 34);
-			this->comboBox2->TabIndex = 7;
-			this->comboBox2->Text = L"Address/ Area";
+			this->comboBox_Address->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->comboBox_Address->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox_Address->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->comboBox_Address->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->comboBox_Address->FormattingEnabled = true;
+			this->comboBox_Address->Location = System::Drawing::Point(327, 352);
+			this->comboBox_Address->Name = L"comboBox_Address";
+			this->comboBox_Address->Size = System::Drawing::Size(227, 30);
+			this->comboBox_Address->TabIndex = 7;
+			this->comboBox_Address->Text = L"Address/ Area";
 			// 
 			// comboBox1
 			// 
@@ -1265,9 +1273,10 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Cairo", L"Alexandria" });
 			this->comboBox1->Location = System::Drawing::Point(75, 352);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(227, 34);
+			this->comboBox1->Size = System::Drawing::Size(227, 30);
 			this->comboBox1->TabIndex = 8;
 			this->comboBox1->Text = L"Governorate";
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Home::comboBox1_SelectedIndexChanged);
 			// 
 			// label1
 			// 
@@ -1278,13 +1287,13 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 			this->label1->Location = System::Drawing::Point(161, 78);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(411, 219);
+			this->label1->Size = System::Drawing::Size(328, 175);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"OTlob";
 			// 
 			// Home
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::BurlyWood;
 			this->ClientSize = System::Drawing::Size(1207, 671);
@@ -1330,57 +1339,111 @@ private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
 
 		}
 #pragma endregion
-		
+
 	private: System::Void button_Close_Click(System::Object^  sender, System::EventArgs^  e) {
 		Application::Exit();
-			 }
+	}
 	private: System::Void button_Minimize_Click(System::Object^  sender, System::EventArgs^  e) {
-				 WindowState = FormWindowState::Minimized;
-			 }
+		WindowState = FormWindowState::Minimized;
+	}
 
 	private: System::Void panel1_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-				 this->dragging = true;
-				 this->offset = Point(e->X, e->Y);
-			 }
+		this->dragging = true;
+		this->offset = Point(e->X, e->Y);
+	}
 	private: System::Void panel1_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-				 if(this->dragging){
-					Point currentScreenPos = PointToScreen(e->Location);
-					Location = Point(currentScreenPos.X - this->offset.X, currentScreenPos.Y - this->offset.Y);
-				 }
-			 }
+		if (this->dragging) {
+			Point currentScreenPos = PointToScreen(e->Location);
+			Location = Point(currentScreenPos.X - this->offset.X, currentScreenPos.Y - this->offset.Y);
+		}
+	}
 	private: System::Void panel1_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-				 this->dragging = false;
-			 }
+		this->dragging = false;
+	}
 	private: System::Void Button_SignUp_Click(System::Object^  sender, System::EventArgs^  e) {
 		GlobalClass::signup->Show();
-				 this->Hide();
-		 }
-private: System::Void Button_Proflie_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::profile->Show();
-	this->Hide();
-}
-private: System::Void button_SignIn_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::signin->Show();
-	this->Hide();
-}
-private: System::Void Home_Load(System::Object^  sender, System::EventArgs^  e) {
-	if (GlobalClass::LogIn == true) {
-		label_UsernameN->Visible = true;
-		button_SignIn->Visible = false;
-		Button_SignUp->Visible = false;
-		label_Username->Text = GlobalClass::username;
+		this->Hide();
 	}
-}
-private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-	if (GlobalClass::LogIn) {
-		label_UsernameN->Visible = true;
-		button_SignIn->Visible = false;
-		Button_SignUp->Visible = false;
-		label_Username->Text = GlobalClass::username;
-		Button_Profile->Visible = true;
-		button_SignOut->Visible = true;
+	private: System::Void Button_Proflie_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::profile->Show();
+		this->Hide();
 	}
-	else {
+	private: System::Void button_SignIn_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::signin->Show();
+		this->Hide();
+	}
+	private: System::Void Home_Load(System::Object^  sender, System::EventArgs^  e) {
+		if (GlobalClass::LogIn == true) {
+			label_UsernameN->Visible = true;
+			button_SignIn->Visible = false;
+			Button_SignUp->Visible = false;
+			label_Username->Text = GlobalClass::username;
+		}
+	}
+	private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		if (GlobalClass::LogIn) {
+			label_UsernameN->Visible = true;
+			button_SignIn->Visible = false;
+			Button_SignUp->Visible = false;
+			label_Username->Text = GlobalClass::username;
+			Button_Profile->Visible = true;
+			button_SignOut->Visible = true;
+		}
+		else {
+			label_UsernameN->Visible = false;
+			button_SignIn->Visible = true;
+			Button_SignUp->Visible = true;
+			label_Username->Text = GlobalClass::username;
+			Button_Profile->Visible = false;
+			button_SignOut->Visible = false;
+		}
+	}
+	cliext::vector<Restraunt^> restraunt_;
+	private: System::Void Button_ShowRs_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (comboBox_Address->Text != "Address/ Area")
+		{
+			/*Convert_strings temp;
+			string Governate = temp.Convert_System_to_std(comboBox1->Text);
+			string Address = temp.Convert_System_to_std(comboBox_Address->Text);
+			ifstream i("Restraunt.json");
+			json file;
+			i >> file;
+			json area = file[Governate][Address];
+			for (json::iterator it = area.begin(); it != area.end(); ++it)
+			{
+				std::string resturnt = it.key();
+				Restraunt^ r = gcnew Restraunt(temp.Convert_std_to_System(resturnt), temp.Convert_std_to_System(Governate), temp.Convert_std_to_System(Address), area[resturnt]["Deliver Time"]);
+				json mmPath = area[resturnt]["Food"]["Main Meal"];
+				json appPath = area[resturnt]["Food"]["Appetizers"];
+				json desPath = area[resturnt]["Food"]["Desert"];
+				json dPath = area[resturnt]["Food"]["Drinks"];
+				json ssPath = area[resturnt]["Food"]["Side Dishes"];
+				String^ rest_name= temp.Convert_std_to_System(resturnt);
+				json deliveryPath = area[resturnt]["Delivery boy"];
+				json ratePath = area[resturnt]["Rate"];
+				r->mainMeal = r->fill_MainMeal(mmPath, rest_name);
+				r->appetizers = r->fill_Appetizers(appPath, rest_name);
+				r->desserts = r->fill_Desserts(desPath ,rest_name);
+				r->drinks = r->fill_Drinks(dPath, rest_name);
+				r->sidedishes = r->fill_SideDishes(ssPath, rest_name);
+				r->deliveryBoys = r->fill_Delivery(deliveryPath);
+				r->setRate(ratePath);
+				restraunt_.push_back(r);
+			}*/
+			Globals::GlobalClass::governate = comboBox1->Text;
+			Globals::GlobalClass::address = comboBox_Address->Text;
+			Globals::GlobalClass::showRestaurant->Show();
+            this->Hide();
+		}
+	}
+	private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::AdminFormLogIn->Show();
+		this->Hide();
+	}
+	private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::username = "";
+		GlobalClass::LogIn = false;
 		label_UsernameN->Visible = false;
 		button_SignIn->Visible = true;
 		Button_SignUp->Visible = true;
@@ -1388,36 +1451,34 @@ private: System::Void panel1_Paint(System::Object^  sender, System::Windows::For
 		Button_Profile->Visible = false;
 		button_SignOut->Visible = false;
 	}
-}
-private: System::Void Button_ShowRs_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::showRestaurant->Show();
-	this->Hide();
-}
-private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::AdminFormLogIn->Show();
-	this->Hide();
-}
-private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::username = "";
-	GlobalClass::LogIn = false;
-	label_UsernameN->Visible = false;
-	button_SignIn->Visible = true;
-	Button_SignUp->Visible = true;
-	label_Username->Text = GlobalClass::username;
-	Button_Profile->Visible = false;
-	button_SignOut->Visible = false;
-}
-private: System::Void button_AllRestaurants_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::AllRestaurants->ShowDialog();
-}
-private: System::Void buttton_Foods_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::FoodsName->ShowDialog();
-}
-private: System::Void buttton_AllOffers_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::AllOffers->ShowDialog();
-}
-private: System::Void button_MyBills_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::MyBills->ShowDialog();
+	private: System::Void button_AllRestaurants_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::AllRestaurants->ShowDialog();
+	}
+	private: System::Void buttton_Foods_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::FoodsName->ShowDialog();
+	}
+	private: System::Void buttton_AllOffers_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::AllOffers->ShowDialog();
+	}
+	private: System::Void button_MyBills_Click(System::Object^  sender, System::EventArgs^  e) {
+		GlobalClass::MyBills->ShowDialog();
+	}
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		String^ Governate = comboBox1->Text;
+		std::ifstream i("Restraunt.json");
+		json file;
+		i >> file;
+		Convert_strings temp;
+		json area = file[temp.Convert_System_to_std(Governate)];
+		String^ address;
+		comboBox_Address->Text = "Address/ Area";
+		comboBox_Address->Items->Clear();
+		for (json::iterator it = area.begin(); it != area.end(); it++) {
+			address = temp.Convert_std_to_System(it.key());
+			comboBox_Address->Items->Add((address));
+		}
+	}
+private: System::Void panel3_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 }
 };
 }

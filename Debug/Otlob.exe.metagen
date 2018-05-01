@@ -35,6 +35,8 @@ Class Globals.GlobalClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Fields:
     Boolean LogIn : Public, Static
     System.String username : Public, Static
+    System.String governate : Public, Static
+    System.String address : Public, Static
     System.Windows.Forms.Form home : Public, Static
     System.Windows.Forms.Form signin : Public, Static
     System.Windows.Forms.Form signup : Public, Static
@@ -66,6 +68,11 @@ Class Otlob.FoodsName: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Otlob.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.ShowRestaurants: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 index : Public
 Class Otlob.Home: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -74,9 +81,6 @@ Class Otlob.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Otlob.ShowRestaurants: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.OrderFood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

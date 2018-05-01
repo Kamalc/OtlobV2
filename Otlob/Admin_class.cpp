@@ -6,7 +6,7 @@ using namespace System;
 Admin_class::Admin_class()
 {
 }
-Admin_class::Admin_class(String^ username_, String^ password_, String^ email_, String^ birthDate_, String^ firstName_, String^ lastName_, String^ Phone) : User(username_, password_, email_, birthDate_, firstName_, lastName_, Phone)
+Admin_class::Admin_class(String^ username_, String^ password_, String^ email_, String^ day_, String^ month_, String^ year_, String^ firstName_, String^ lastName_, String^ Phone) : User(username_, password_, email_, day_, month_, year_, firstName_, lastName_, Phone)
 {
 }
 void Admin_class::addEmployee(String^ firstName_, String^ lastName_, String^ Phone)

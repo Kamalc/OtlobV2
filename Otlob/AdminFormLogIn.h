@@ -196,7 +196,7 @@ namespace Otlob {
 			this->button_Home->IconZoom = 80;
 			this->button_Home->IsTab = false;
 			this->button_Home->Location = System::Drawing::Point(34, 503);
-			this->button_Home->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_Home->Margin = System::Windows::Forms::Padding(6);
 			this->button_Home->Name = L"button_Home";
 			this->button_Home->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -235,7 +235,7 @@ namespace Otlob {
 			this->bunifuGradientPanel1->GradientTopLeft = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(77)));
 			this->bunifuGradientPanel1->GradientTopRight = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+				static_cast<System::Int32>(static_cast<System::Byte>(117)), static_cast<System::Int32>(static_cast<System::Byte>(26)));
 			this->bunifuGradientPanel1->Location = System::Drawing::Point(78, 30);
 			this->bunifuGradientPanel1->Name = L"bunifuGradientPanel1";
 			this->bunifuGradientPanel1->Quality = 10;
@@ -245,18 +245,16 @@ namespace Otlob {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
-				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Location = System::Drawing::Point(242, 87);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(68, 25);
+			this->label3->Size = System::Drawing::Size(54, 20);
 			this->label3->TabIndex = 57;
 			this->label3->Text = L"Admin";
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
-				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(20, 34);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -267,8 +265,9 @@ namespace Otlob {
 			// 
 			// pictureBox3
 			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(728, 272);
+			this->pictureBox3->Location = System::Drawing::Point(714, 269);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(33, 25);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -278,13 +277,12 @@ namespace Otlob {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
-				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(617, 273);
+			this->label4->Location = System::Drawing::Point(616, 273);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(129, 20);
+			this->label4->Size = System::Drawing::Size(107, 17);
 			this->label4->TabIndex = 54;
 			this->label4->Text = L"Show Password";
 			// 
@@ -307,13 +305,12 @@ namespace Otlob {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
-				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(102, 274);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(98, 25);
+			this->label5->Size = System::Drawing::Size(78, 20);
 			this->label5->TabIndex = 51;
 			this->label5->Text = L"Password";
 			// 
@@ -343,7 +340,7 @@ namespace Otlob {
 			this->button_Clear->IconZoom = 80;
 			this->button_Clear->IsTab = false;
 			this->button_Clear->Location = System::Drawing::Point(247, 382);
-			this->button_Clear->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_Clear->Margin = System::Windows::Forms::Padding(6);
 			this->button_Clear->Name = L"button_Clear";
 			this->button_Clear->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -385,7 +382,7 @@ namespace Otlob {
 			this->button_SignInAdmin->IconZoom = 80;
 			this->button_SignInAdmin->IsTab = false;
 			this->button_SignInAdmin->Location = System::Drawing::Point(461, 382);
-			this->button_SignInAdmin->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_SignInAdmin->Margin = System::Windows::Forms::Padding(6);
 			this->button_SignInAdmin->Name = L"button_SignInAdmin";
 			this->button_SignInAdmin->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -404,13 +401,12 @@ namespace Otlob {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
-				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(102, 186);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(102, 25);
+			this->label6->Size = System::Drawing::Size(83, 20);
 			this->label6->TabIndex = 52;
 			this->label6->Text = L"Username";
 			// 
@@ -464,15 +460,14 @@ namespace Otlob {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
-				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(126, 47);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(174, 50);
+			this->label7->Size = System::Drawing::Size(138, 40);
 			this->label7->TabIndex = 48;
 			this->label7->Text = L"Sign In";
 			// 
@@ -517,7 +512,7 @@ namespace Otlob {
 			this->label2->Location = System::Drawing::Point(68, 3);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(113, 60);
+			this->label2->Size = System::Drawing::Size(89, 48);
 			this->label2->TabIndex = 10;
 			this->label2->Text = L"OTlob";
 			// 
@@ -610,7 +605,7 @@ namespace Otlob {
 			// 
 			// AdminFormLogIn
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(962, 671);
 			this->Controls->Add(this->panel3);
@@ -643,8 +638,20 @@ namespace Otlob {
 #pragma endregion
 
 private: System::Void button_SignInAdmin_Click(System::Object^  sender, System::EventArgs^  e) {
-	GlobalClass::AdminForm->Show();
-	this->Hide();
+	User^ Admin = gcnew User();
+	Admin->SignIn_Data(textBox_Username->Text, textBox_Password->Text);
+    String^ return_val = Admin->SignIn("Admin.json");
+    if (return_val == "LogIn")
+    {
+		textBox_Username->Text = "";
+		textBox_Password->Text = "";
+		GlobalClass::AdminForm->Show();
+		this->Hide();
+    }
+    else
+    {
+        MessageBox::Show(return_val, "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Asterisk);
+    }
 }
 private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::home->Show();

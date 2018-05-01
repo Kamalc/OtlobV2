@@ -2,6 +2,9 @@
 #include "Global.h"
 #include <list>
 #include <cliext\list>
+#include <cliext\vector>
+#include "Restraunt.h"
+#include "Home.h"
 namespace Otlob {
 
 	using namespace System;
@@ -23,6 +26,7 @@ namespace Otlob {
 		ShowRestaurants(void)
 		{
 			InitializeComponent();
+
 			if (GlobalClass::LogIn) {
 				label_UsernameN->Visible = true;
 				button_SignIn->Visible = false;
@@ -31,11 +35,17 @@ namespace Otlob {
 				Button_Profile->Visible = true;
 				button_SignOut->Visible = true;
 			}
+			/*Restraunt^ tmp;
+			ifstream i("Restraunt.json");
+			json file;
+			i >> file;
+			tmp->fill_MainMeal(file["Cairo"]["6th of October Hosary and Ahyaa"]["Chilis Mall Of Arabia"]["Food"]["Main Meal"], "Chilis Mall Of Arabia");*/
+			//tmp.fill_MainMeal(file["Cairo"]["6th of October Hosary and Ahyaa"]["Chilis Mall Of Arabia"]["Food"]["Main Meal"], "Chilis Mall Of Arabia");
 			//
 			//TODO: Add the constructor code here
 			//
 		}
-
+		
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -47,6 +57,10 @@ namespace Otlob {
 				delete components;
 			}
 		}
+	private: cliext::vector<Restraunt^> rests;
+	//::GlobalClass::restraunt_List;
+	public: int index;
+	//public: bunifuButton^ buttonRestaurant = gcnew bunifuButton();
 	private: System::Windows::Forms::Panel^  panel3;
 	protected:
 	private: Bunifu::Framework::UI::BunifuGradientPanel^  bunifuGradientPanel1;
@@ -229,6 +243,7 @@ namespace Otlob {
 			this->Progress->Size = System::Drawing::Size(81, 81);
 			this->Progress->TabIndex = 5;
 			this->Progress->Value = 50;
+			this->Progress->Visible = false;
 			// 
 			// bunifuFlatButton5
 			// 
@@ -273,6 +288,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->bunifuFlatButton5->TextFont = (gcnew System::Drawing::Font(L"Modern No. 20", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->bunifuFlatButton5->Visible = false;
 			this->bunifuFlatButton5->Click += gcnew System::EventHandler(this, &ShowRestaurants::bunifuFlatButton5_Click);
 			// 
 			// pictureBox2
@@ -285,6 +301,7 @@ namespace Otlob {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 1;
 			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Visible = false;
 			// 
 			// bunifuGradientPanel3
 			// 
@@ -818,7 +835,6 @@ namespace Otlob {
 			this->button_MyBills->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_MyBills->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-//			this->button_MyBills->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_MyBills_Click);
 			// 
 			// button_AllOffers
 			// 
@@ -860,7 +876,6 @@ namespace Otlob {
 			this->button_AllOffers->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllOffers->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-//			this->button_AllOffers->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_AllOffers_Click);
 			// 
 			// button_AllFoods
 			// 
@@ -902,7 +917,6 @@ namespace Otlob {
 			this->button_AllFoods->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllFoods->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-		//	this->button_AllFoods->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_AllFoods_Click);
 			// 
 			// button_AllRestuarants
 			// 
@@ -944,7 +958,6 @@ namespace Otlob {
 			this->button_AllRestuarants->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllRestuarants->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-		//	this->button_AllRestuarants->Click += gcnew System::EventHandler(this, &ShowRestaurants::button_AllRestuarants_Click);
 			// 
 			// label2
 			// 
@@ -978,6 +991,7 @@ namespace Otlob {
 			this->Name = L"ShowRestaurants";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ShowRestaurants";
+			this->Load += gcnew System::EventHandler(this, &ShowRestaurants::ShowRestaurants_Load);
 			this->panel3->ResumeLayout(false);
 			this->flowPanelRestaurants->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
@@ -1002,6 +1016,7 @@ namespace Otlob {
 
 
 private: System::Void flowPanelRestaurants_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+
 	//Bunifu::Framework::UI::BunifuFlatButton^  button;
 
 	/*list<bunifuButton^> buttons; //= gcnew cliext::list<bunifuButton^>();
@@ -1020,8 +1035,10 @@ private: System::Void button_Close_Click(System::Object^  sender, System::EventA
 	Application::Exit();
 }
 private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
-
-	for (int i = 0; i < 20; ++i) {
+	MessageBox::Show(rests[index]->getName() + " " + index);
+	GlobalClass::order->Show();
+	this->Hide();
+	/*for (int i = 0; i < 20; ++i) {
 		bunifuButton^ button = gcnew bunifuButton();
 		PictureBox^ pic = gcnew PictureBox();
 		bunifuPerc^ perc = gcnew bunifuPerc();
@@ -1071,7 +1088,7 @@ private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::E
 		perc->LineProgressThickness = 8;
 		perc->LineThickness = 8;
 		perc->Dock = System::Windows::Forms::DockStyle::Left;
-	}
+	}*/
 }
 private: System::Void Panel_Header_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 }
@@ -1102,6 +1119,7 @@ private: System::Void panel2_Paint(System::Object^  sender, System::Windows::For
 private: System::Void button_Home_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::home->Show();
 	this->Hide();
+	
 }
 private: System::Void button_SignOut_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::LogIn = false;
@@ -1137,5 +1155,93 @@ private: System::Void buttton_AllOffers_Click(System::Object^  sender, System::E
 private: System::Void button_MyBills_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::MyBills->ShowDialog();
 }*/
+
+private: System::Void ShowRestaurants_Load(System::Object^  sender, System::EventArgs^  e) {
+	Convert_strings temp;
+	string Governate = temp.Convert_System_to_std(Globals::GlobalClass::governate);
+	string Address = temp.Convert_System_to_std(Globals::GlobalClass::address);
+	ifstream i("Restraunt.json");
+	json file;
+	i >> file;
+	json area = file[Governate][Address];
+	for (json::iterator it = area.begin(); it != area.end(); ++it)
+	{
+		std::string resturnt = it.key();
+		Restraunt^ r = gcnew Restraunt(temp.Convert_std_to_System(resturnt), temp.Convert_std_to_System(Governate), temp.Convert_std_to_System(Address), area[resturnt]["Deliver Time"]);
+		json mmPath = area[resturnt]["Food"]["Main Meal"];
+		json appPath = area[resturnt]["Food"]["Appetizers"];
+		json desPath = area[resturnt]["Food"]["Desert"];
+		json dPath = area[resturnt]["Food"]["Drinks"];
+		json ssPath = area[resturnt]["Food"]["Side Dishes"];
+		String^ rest_name = temp.Convert_std_to_System(resturnt);
+		json deliveryPath = area[resturnt]["Delivery boy"];
+		json ratePath = area[resturnt]["Rate"];
+		r->mainMeal = r->fill_MainMeal(mmPath, rest_name);
+		r->appetizers = r->fill_Appetizers(appPath, rest_name);
+		r->desserts = r->fill_Desserts(desPath, rest_name);
+		r->drinks = r->fill_Drinks(dPath, rest_name);
+		r->sidedishes = r->fill_SideDishes(ssPath, rest_name);
+		r->deliveryBoys = r->fill_Delivery(deliveryPath);
+		r->setRate(ratePath);
+		rests.push_back(r);
+	}
+	for (int i = 0; i < rests.size(); ++i) {
+		bunifuButton^ button = gcnew bunifuButton();
+		PictureBox^ pic = gcnew PictureBox();
+		bunifuPerc^ perc = gcnew bunifuPerc();
+
+		//button->ButtonText = L"Restaurant 123";	//Name of Restaurant
+		//pic->Load("KFCLogo.png");			//Picture of Restaurant
+		//perc->Value = 75;			//Rating by percentage
+
+		button->ButtonText = rests[i]->getName();	//Name of Restaurant
+		pic->Load("KFCLogo.png");			//Picture of Restaurant
+		double percentage = (rests[i]->getRate() / 5) * 100;
+		perc->Value = percentage;			//Rating by percentage
+
+		this->flowPanelRestaurants->Controls->Add(perc);
+		this->flowPanelRestaurants->Controls->Add(button);
+		this->flowPanelRestaurants->Controls->Add(pic);
+		button->Size = System::Drawing::Size(630, 79);
+		button->Activecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		button->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		button->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		button->OnHovercolor = System::Drawing::Color::Maroon;
+		button->OnHoverTextColor = System::Drawing::Color::White;
+		button->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+		button->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+		button->TextFont = (gcnew System::Drawing::Font(L"Modern No. 20", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		button->IconVisible = false;
+
+		pic->Size = System::Drawing::Size(124, 80);
+		pic->TabIndex = 1;
+		pic->TabStop = false;
+		pic->SizeMode = PictureBoxSizeMode::Zoom;
+		//pic->Dock = System::Windows::Forms::DockStyle::Right;
+
+		perc->Size = System::Drawing::Size(78, 78);
+		perc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		perc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		perc->ProgressBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+		perc->ProgressColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			static_cast<System::Int32>(static_cast<System::Byte>(0)));
+		perc->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
+			static_cast<System::Int32>(static_cast<System::Byte>(102)));
+		perc->LineProgressThickness = 8;
+		perc->LineThickness = 8;
+		perc->Dock = System::Windows::Forms::DockStyle::Left;
+		index = i;
+		//MessageBox::Show(System::Convert::ToString(i));
+		button->Click += gcnew System::EventHandler(this, &ShowRestaurants::bunifuFlatButton5_Click);
+	}
+}
 };
 }

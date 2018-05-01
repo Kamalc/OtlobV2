@@ -81,7 +81,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminForm.cpp" />
     <ClCompile Include="AdminFormLogIn.cpp" />
     <ClCompile Include="Admin_class.cpp" />
@@ -114,7 +113,6 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -170,6 +168,7 @@
     <ClInclude Include="SignUp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="UML.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>

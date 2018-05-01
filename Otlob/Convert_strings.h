@@ -7,7 +7,7 @@ using namespace System;
 ref class Convert_strings
 {
 public:
-    static std::string Convert_System_to_std(String ^ S);
-	static String^ Convert_std_to_System(std::string s);
+    std::string Convert_System_to_std(String ^ S);
+	String^ Convert_std_to_System(std::string s);
 };
 

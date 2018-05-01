@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include "Global.h"
 #include"User.h"
+#include "Customer.h"
 namespace Otlob {
 
 	using namespace System;
@@ -212,6 +213,7 @@ namespace Otlob {
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(960, 570);
 			this->panel3->TabIndex = 18;
+			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &SignIn::panel3_Paint);
 			// 
 			// pictureBox8
 			// 
@@ -260,7 +262,7 @@ namespace Otlob {
 				static_cast<System::Byte>(0)));
 			this->label10->Location = System::Drawing::Point(706, 320);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(129, 20);
+			this->label10->Size = System::Drawing::Size(107, 17);
 			this->label10->TabIndex = 21;
 			this->label10->Text = L"Show Password";
 			// 
@@ -287,7 +289,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(191, 321);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(98, 25);
+			this->label8->Size = System::Drawing::Size(78, 20);
 			this->label8->TabIndex = 19;
 			this->label8->Text = L"Password";
 			// 
@@ -317,7 +319,7 @@ namespace Otlob {
 			this->button_Clear->IconZoom = 80;
 			this->button_Clear->IsTab = false;
 			this->button_Clear->Location = System::Drawing::Point(336, 429);
-			this->button_Clear->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_Clear->Margin = System::Windows::Forms::Padding(6);
 			this->button_Clear->Name = L"button_Clear";
 			this->button_Clear->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -359,7 +361,7 @@ namespace Otlob {
 			this->button_SubmitSI->IconZoom = 80;
 			this->button_SubmitSI->IsTab = false;
 			this->button_SubmitSI->Location = System::Drawing::Point(550, 429);
-			this->button_SubmitSI->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_SubmitSI->Margin = System::Windows::Forms::Padding(6);
 			this->button_SubmitSI->Name = L"button_SubmitSI";
 			this->button_SubmitSI->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -382,7 +384,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label11->Location = System::Drawing::Point(191, 233);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(102, 25);
+			this->label11->Size = System::Drawing::Size(83, 20);
 			this->label11->TabIndex = 19;
 			this->label11->Text = L"Username";
 			// 
@@ -438,7 +440,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label_SignUp->Location = System::Drawing::Point(215, 94);
 			this->label_SignUp->Name = L"label_SignUp";
-			this->label_SignUp->Size = System::Drawing::Size(174, 50);
+			this->label_SignUp->Size = System::Drawing::Size(138, 40);
 			this->label_SignUp->TabIndex = 16;
 			this->label_SignUp->Text = L"Sign In";
 			// 
@@ -484,7 +486,7 @@ namespace Otlob {
 			this->button_SignIn->IconZoom = 90;
 			this->button_SignIn->IsTab = false;
 			this->button_SignIn->Location = System::Drawing::Point(718, -1);
-			this->button_SignIn->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_SignIn->Margin = System::Windows::Forms::Padding(6);
 			this->button_SignIn->Name = L"button_SignIn";
 			this->button_SignIn->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -525,7 +527,7 @@ namespace Otlob {
 			this->Button_SignUp->IconZoom = 90;
 			this->Button_SignUp->IsTab = false;
 			this->Button_SignUp->Location = System::Drawing::Point(550, -1);
-			this->Button_SignUp->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Button_SignUp->Margin = System::Windows::Forms::Padding(6);
 			this->Button_SignUp->Name = L"Button_SignUp";
 			this->Button_SignUp->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -644,7 +646,7 @@ namespace Otlob {
 			this->button_AdminRoom->IconZoom = 100;
 			this->button_AdminRoom->IsTab = false;
 			this->button_AdminRoom->Location = System::Drawing::Point(0, 601);
-			this->button_AdminRoom->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_AdminRoom->Margin = System::Windows::Forms::Padding(6);
 			this->button_AdminRoom->Name = L"button_AdminRoom";
 			this->button_AdminRoom->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -686,7 +688,7 @@ namespace Otlob {
 			this->button_Home->IconZoom = 100;
 			this->button_Home->IsTab = false;
 			this->button_Home->Location = System::Drawing::Point(0, 218);
-			this->button_Home->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_Home->Margin = System::Windows::Forms::Padding(6);
 			this->button_Home->Name = L"button_Home";
 			this->button_Home->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -728,7 +730,7 @@ namespace Otlob {
 			this->button_MyBills->IconZoom = 100;
 			this->button_MyBills->IsTab = false;
 			this->button_MyBills->Location = System::Drawing::Point(0, 514);
-			this->button_MyBills->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_MyBills->Margin = System::Windows::Forms::Padding(6);
 			this->button_MyBills->Name = L"button_MyBills";
 			this->button_MyBills->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -742,7 +744,6 @@ namespace Otlob {
 			this->button_MyBills->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_MyBills->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-			//this->button_MyBills->Click += gcnew System::EventHandler(this, &SignIn::button_MyBills_Click);
 			// 
 			// button_AllOffers
 			// 
@@ -770,7 +771,7 @@ namespace Otlob {
 			this->button_AllOffers->IconZoom = 100;
 			this->button_AllOffers->IsTab = false;
 			this->button_AllOffers->Location = System::Drawing::Point(0, 440);
-			this->button_AllOffers->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_AllOffers->Margin = System::Windows::Forms::Padding(6);
 			this->button_AllOffers->Name = L"button_AllOffers";
 			this->button_AllOffers->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -784,7 +785,6 @@ namespace Otlob {
 			this->button_AllOffers->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllOffers->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-			//this->button_AllOffers->Click += gcnew System::EventHandler(this, &SignIn::button_AllOffers_Click);
 			// 
 			// button_AllFoods
 			// 
@@ -812,7 +812,7 @@ namespace Otlob {
 			this->button_AllFoods->IconZoom = 100;
 			this->button_AllFoods->IsTab = false;
 			this->button_AllFoods->Location = System::Drawing::Point(0, 366);
-			this->button_AllFoods->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_AllFoods->Margin = System::Windows::Forms::Padding(6);
 			this->button_AllFoods->Name = L"button_AllFoods";
 			this->button_AllFoods->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -826,7 +826,6 @@ namespace Otlob {
 			this->button_AllFoods->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllFoods->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-			//this->button_AllFoods->Click += gcnew System::EventHandler(this, &SignIn::button_AllFoods_Click);
 			// 
 			// button_AllRestuarants
 			// 
@@ -854,7 +853,7 @@ namespace Otlob {
 			this->button_AllRestuarants->IconZoom = 100;
 			this->button_AllRestuarants->IsTab = false;
 			this->button_AllRestuarants->Location = System::Drawing::Point(0, 292);
-			this->button_AllRestuarants->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_AllRestuarants->Margin = System::Windows::Forms::Padding(6);
 			this->button_AllRestuarants->Name = L"button_AllRestuarants";
 			this->button_AllRestuarants->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -868,7 +867,6 @@ namespace Otlob {
 			this->button_AllRestuarants->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->button_AllRestuarants->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic));
-			//this->button_AllRestuarants->Click += gcnew System::EventHandler(this, &SignIn::button_AllRestuarants_Click);
 			// 
 			// label2
 			// 
@@ -881,13 +879,13 @@ namespace Otlob {
 			this->label2->Location = System::Drawing::Point(26, 23);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(197, 105);
+			this->label2->Size = System::Drawing::Size(155, 83);
 			this->label2->TabIndex = 10;
 			this->label2->Text = L"OTlob";
 			// 
 			// SignIn
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1207, 671);
 			this->Controls->Add(this->panel3);
@@ -923,7 +921,7 @@ namespace Otlob {
 		this->Hide();
 		 }
 private: System::Void button_SubmitSI_Click(System::Object^  sender, System::EventArgs^  e) {
-	User^ customer = gcnew User();
+	Customer^ customer = gcnew Customer();
 	customer->SignIn_Data(TextBox_Username->Text, Textbox_Password->Text);
     String^ return_val = customer->SignIn("Users.json");
     if (return_val == "LogIn")
@@ -999,5 +997,7 @@ private: System::Void buttton_AllOffers_Click(System::Object^  sender, System::E
 private: System::Void button_MyBills_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::MyBills->ShowDialog();
 }*/
+private: System::Void panel3_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+}
 };
 }
