@@ -79,11 +79,8 @@ String^ User::SignIn(std::string DataBase_Name)
         if (j[UserName]["Password"] == PassWord)
         {
             GlobalClass::LogIn = true;
-            GlobalClass::username = Username;
-            if (GlobalClass::LogIn == true) 
-            {   
+            GlobalClass::username = Username;  
                 return("LogIn");
-            }
         }
         else
         {

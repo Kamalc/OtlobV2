@@ -172,6 +172,7 @@ namespace Otlob {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(330, 5);
@@ -182,7 +183,7 @@ namespace Otlob {
 			// 
 			// bunifuImageButton1
 			// 
-			this->bunifuImageButton1->BackColor = System::Drawing::Color::Maroon;
+			this->bunifuImageButton1->BackColor = System::Drawing::Color::Transparent;
 			this->bunifuImageButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->bunifuImageButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuImageButton1.Image")));
 			this->bunifuImageButton1->ImageActive = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuImageButton1.ImageActive")));
@@ -198,6 +199,7 @@ namespace Otlob {
 			// 
 			// pictureBox5
 			// 
+			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
 			this->pictureBox5->Location = System::Drawing::Point(439, 3);
 			this->pictureBox5->Name = L"pictureBox5";
@@ -208,6 +210,7 @@ namespace Otlob {
 			// 
 			// pictureBox4
 			// 
+			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
 			this->pictureBox4->Location = System::Drawing::Point(238, 3);
 			this->pictureBox4->Name = L"pictureBox4";
@@ -252,7 +255,7 @@ namespace Otlob {
 			this->bunifuSeparator1->BackColor = System::Drawing::Color::Transparent;
 			this->bunifuSeparator1->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuSeparator1->LineThickness = 5;
+			this->bunifuSeparator1->LineThickness = 8;
 			this->bunifuSeparator1->Location = System::Drawing::Point(460, 27);
 			this->bunifuSeparator1->Margin = System::Windows::Forms::Padding(6);
 			this->bunifuSeparator1->Name = L"bunifuSeparator1";
@@ -285,6 +288,8 @@ namespace Otlob {
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->ForeColor = System::Drawing::Color::Maroon;
 			this->label4->Location = System::Drawing::Point(497, 43);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(168, 25);
@@ -294,6 +299,8 @@ namespace Otlob {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->ForeColor = System::Drawing::Color::Maroon;
 			this->label3->Location = System::Drawing::Point(512, 8);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(59, 25);
@@ -465,6 +472,8 @@ namespace Otlob {
 			// label13
 			// 
 			this->label13->AutoSize = true;
+			this->label13->BackColor = System::Drawing::Color::Transparent;
+			this->label13->ForeColor = System::Drawing::Color::Maroon;
 			this->label13->Location = System::Drawing::Point(1, 300);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(56, 25);
@@ -587,6 +596,8 @@ namespace Otlob {
 			// label11
 			// 
 			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::Color::Transparent;
+			this->label11->ForeColor = System::Drawing::Color::Maroon;
 			this->label11->Location = System::Drawing::Point(318, 206);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(162, 25);
@@ -596,6 +607,8 @@ namespace Otlob {
 			// label10
 			// 
 			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->ForeColor = System::Drawing::Color::Maroon;
 			this->label10->Location = System::Drawing::Point(214, 272);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(105, 25);
@@ -605,6 +618,8 @@ namespace Otlob {
 			// label9
 			// 
 			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->ForeColor = System::Drawing::Color::Maroon;
 			this->label9->Location = System::Drawing::Point(3, 206);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(128, 25);
@@ -622,6 +637,8 @@ namespace Otlob {
 			// label12
 			// 
 			this->label12->AutoSize = true;
+			this->label12->BackColor = System::Drawing::Color::Transparent;
+			this->label12->ForeColor = System::Drawing::Color::Maroon;
 			this->label12->Location = System::Drawing::Point(581, 3);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(127, 25);
@@ -639,6 +656,8 @@ namespace Otlob {
 			// label8
 			// 
 			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->ForeColor = System::Drawing::Color::Maroon;
 			this->label8->Location = System::Drawing::Point(389, 3);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(118, 25);
@@ -648,6 +667,8 @@ namespace Otlob {
 			// label7
 			// 
 			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->ForeColor = System::Drawing::Color::Maroon;
 			this->label7->Location = System::Drawing::Point(184, 3);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(199, 25);
@@ -665,6 +686,8 @@ namespace Otlob {
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->ForeColor = System::Drawing::Color::Maroon;
 			this->label6->Location = System::Drawing::Point(3, 3);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(175, 25);
@@ -682,6 +705,7 @@ namespace Otlob {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::Maroon;
@@ -694,6 +718,7 @@ namespace Otlob {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Maroon;

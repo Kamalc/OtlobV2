@@ -133,6 +133,8 @@ private: System::Windows::Forms::FlowLayoutPanel^  Panel_Drinks;
 private: System::Windows::Forms::Label^  label10;
 private: System::Windows::Forms::Label^  label11;
 private: System::Windows::Forms::Label^  label12;
+private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton1;
+
 
 
 
@@ -247,6 +249,7 @@ private: System::Windows::Forms::Label^  label12;
 			this->button_AllFoods = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->button_AllRestuarants = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->panel3->SuspendLayout();
 			this->Panel_MainMeal->SuspendLayout();
 			this->flowLayoutPanel2->SuspendLayout();
@@ -291,6 +294,8 @@ private: System::Windows::Forms::Label^  label12;
 			// Panel_Appetizers
 			// 
 			this->Panel_Appetizers->AutoScroll = true;
+			this->Panel_Appetizers->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(209)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->Panel_Appetizers->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->Panel_Appetizers->Location = System::Drawing::Point(576, 320);
@@ -301,6 +306,8 @@ private: System::Windows::Forms::Label^  label12;
 			// Panel_SidePlates
 			// 
 			this->Panel_SidePlates->AutoScroll = true;
+			this->Panel_SidePlates->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(209)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->Panel_SidePlates->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->Panel_SidePlates->Location = System::Drawing::Point(576, 117);
@@ -311,6 +318,8 @@ private: System::Windows::Forms::Label^  label12;
 			// Panel_Drinks
 			// 
 			this->Panel_Drinks->AutoScroll = true;
+			this->Panel_Drinks->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(209)),
+				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->Panel_Drinks->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->Panel_Drinks->Location = System::Drawing::Point(276, 320);
@@ -321,6 +330,8 @@ private: System::Windows::Forms::Label^  label12;
 			// Panel_Desert
 			// 
 			this->Panel_Desert->AutoScroll = true;
+			this->Panel_Desert->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(209)),
+				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->Panel_Desert->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->Panel_Desert->Location = System::Drawing::Point(276, 118);
@@ -331,27 +342,33 @@ private: System::Windows::Forms::Label^  label12;
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(271, 294);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(67, 25);
+			this->label6->Size = System::Drawing::Size(73, 25);
 			this->label6->TabIndex = 4;
 			this->label6->Text = L"Drinks";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(571, 294);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(105, 25);
+			this->label5->Size = System::Drawing::Size(115, 25);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"Appetizers";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(571, 92);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(111, 25);
+			this->label4->Size = System::Drawing::Size(122, 25);
 			this->label4->TabIndex = 4;
 			this->label4->Text = L"Side Plates";
 			// 
@@ -381,7 +398,7 @@ private: System::Windows::Forms::Label^  label12;
 			this->button_MakeOrder->IconZoom = 80;
 			this->button_MakeOrder->IsTab = false;
 			this->button_MakeOrder->Location = System::Drawing::Point(194, 505);
-			this->button_MakeOrder->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->button_MakeOrder->Margin = System::Windows::Forms::Padding(6);
 			this->button_MakeOrder->Name = L"button_MakeOrder";
 			this->button_MakeOrder->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -401,24 +418,30 @@ private: System::Windows::Forms::Label^  label12;
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(271, 92);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(69, 25);
+			this->label3->Size = System::Drawing::Size(75, 25);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Desert";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(3, 92);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(103, 25);
+			this->label1->Size = System::Drawing::Size(112, 25);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Main Meal";
 			// 
 			// Panel_MainMeal
 			// 
 			this->Panel_MainMeal->AutoScroll = true;
+			this->Panel_MainMeal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(209)),
+				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->Panel_MainMeal->Controls->Add(this->flowLayoutPanel2);
 			this->Panel_MainMeal->Controls->Add(this->flowLayoutPanel3);
 			this->Panel_MainMeal->Controls->Add(this->flowLayoutPanel1);
@@ -599,6 +622,7 @@ private: System::Windows::Forms::Label^  label12;
 			// 
 			this->bunifuGradientPanel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuGradientPanel3.BackgroundImage")));
 			this->bunifuGradientPanel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->bunifuGradientPanel3->Controls->Add(this->bunifuFlatButton1);
 			this->bunifuGradientPanel3->Controls->Add(this->label_RestaurantName);
 			this->bunifuGradientPanel3->Dock = System::Windows::Forms::DockStyle::Top;
 			this->bunifuGradientPanel3->GradientBottomLeft = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
@@ -1218,6 +1242,48 @@ private: System::Windows::Forms::Label^  label12;
 			this->label2->TabIndex = 10;
 			this->label2->Text = L"OTlob";
 			// 
+			// bunifuFlatButton1
+			// 
+			this->bunifuFlatButton1->Activecolor = System::Drawing::Color::Maroon;
+			this->bunifuFlatButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->bunifuFlatButton1->BorderRadius = 0;
+			this->bunifuFlatButton1->ButtonText = L"FeedBack";
+			this->bunifuFlatButton1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->bunifuFlatButton1->DisabledColor = System::Drawing::Color::Gray;
+			this->bunifuFlatButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->bunifuFlatButton1->Iconcolor = System::Drawing::Color::Transparent;
+			this->bunifuFlatButton1->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton1.Iconimage")));
+			this->bunifuFlatButton1->Iconimage_right = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton1.Iconimage_right")));
+			this->bunifuFlatButton1->Iconimage_right_Selected = nullptr;
+			this->bunifuFlatButton1->Iconimage_Selected = nullptr;
+			this->bunifuFlatButton1->IconMarginLeft = 0;
+			this->bunifuFlatButton1->IconMarginRight = 0;
+			this->bunifuFlatButton1->IconRightVisible = true;
+			this->bunifuFlatButton1->IconRightZoom = 0;
+			this->bunifuFlatButton1->IconVisible = true;
+			this->bunifuFlatButton1->IconZoom = 60;
+			this->bunifuFlatButton1->IsTab = false;
+			this->bunifuFlatButton1->Location = System::Drawing::Point(642, 3);
+			this->bunifuFlatButton1->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->bunifuFlatButton1->Name = L"bunifuFlatButton1";
+			this->bunifuFlatButton1->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->OnHovercolor = System::Drawing::Color::AntiqueWhite;
+			this->bunifuFlatButton1->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
+			this->bunifuFlatButton1->selected = false;
+			this->bunifuFlatButton1->Size = System::Drawing::Size(221, 28);
+			this->bunifuFlatButton1->TabIndex = 13;
+			this->bunifuFlatButton1->Text = L"FeedBack";
+			this->bunifuFlatButton1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			// 
 			// OrderFood
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -1487,5 +1553,6 @@ private: System::Void OrderFood_Load(System::Object^  sender, System::EventArgs^
 		this->Panel_Appetizers->Controls->Add(panelEachFood);
 	}
 }
+
 };
 }

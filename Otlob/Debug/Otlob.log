@@ -15,7 +15,6 @@
   FoodsName.cpp
   Global.cpp
   Home.cpp
-e:\project\last work\otlob version s\otlob version2(not git)\project with classes_afterediting\otlob\otlob\ShowRestaurants.h(1200): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   MainMeal.cpp
   MyBills.cpp
   Order.cpp
@@ -27,12 +26,11 @@ e:\project\last work\otlob version s\otlob version2(not git)\project with classe
   Profile.cpp
   Restraunt.cpp
   ShowRestaurants.cpp
-e:\project\last work\otlob version s\otlob version2(not git)\project with classes_afterediting\otlob\otlob\ShowRestaurants.h(1200): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   SideDishes.cpp
   SignIn.cpp
   SignUp.cpp
   User.cpp
   Generating Code...
   .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
-  Otlob.vcxproj -> E:\Project\Last work\Otlob Version S\Otlob version2(not git)\Project with classes_AfterEditing\Otlob\Debug\Otlob.exe
-  Otlob.vcxproj -> E:\Project\Last work\Otlob Version S\Otlob version2(not git)\Project with classes_AfterEditing\Otlob\Debug\Otlob.pdb (Full PDB)
+  Otlob.vcxproj -> E:\Project\O7A\OtlobV2\Debug\Otlob.exe
+  Otlob.vcxproj -> E:\Project\O7A\OtlobV2\Debug\Otlob.pdb (Full PDB)

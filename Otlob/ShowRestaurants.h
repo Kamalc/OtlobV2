@@ -4,7 +4,8 @@
 #include <cliext\list>
 #include <cliext\vector>
 #include "Restraunt.h"
-#include "Home.h"
+#include"Convert_strings.h"
+#include<fstream>
 namespace Otlob {
 
 	using namespace System;
@@ -26,7 +27,6 @@ namespace Otlob {
 		ShowRestaurants(void)
 		{
 			InitializeComponent();
-
 			if (GlobalClass::LogIn) {
 				label_UsernameN->Visible = true;
 				button_SignIn->Visible = false;
@@ -35,17 +35,27 @@ namespace Otlob {
 				Button_Profile->Visible = true;
 				button_SignOut->Visible = true;
 			}
-			/*Restraunt^ tmp;
-			ifstream i("Restraunt.json");
-			json file;
-			i >> file;
-			tmp->fill_MainMeal(file["Cairo"]["6th of October Hosary and Ahyaa"]["Chilis Mall Of Arabia"]["Food"]["Main Meal"], "Chilis Mall Of Arabia");*/
-			//tmp.fill_MainMeal(file["Cairo"]["6th of October Hosary and Ahyaa"]["Chilis Mall Of Arabia"]["Food"]["Main Meal"], "Chilis Mall Of Arabia");
 			//
 			//TODO: Add the constructor code here
 			//
 		}
-		
+		/*ShowRestaurants(cliext::vector<Restraunt^> restaurant_s)
+		{
+			InitializeComponent();
+			if (GlobalClass::LogIn) {
+				label_UsernameN->Visible = true;
+				button_SignIn->Visible = false;
+				Button_SignUp->Visible = false;
+				label_Username->Text = GlobalClass::username;
+				Button_Profile->Visible = true;
+				button_SignOut->Visible = true;
+			}
+			for (int i = 0; i < restaurant_s.size(); ++i)
+				restaurants[i] = restaurant_s[i];
+			//
+			//TODO: Add the constructor code here
+			//
+		}*/
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -57,8 +67,7 @@ namespace Otlob {
 				delete components;
 			}
 		}
-	private: cliext::vector<Restraunt^> rests;
-	//::GlobalClass::restraunt_List;
+    private: cliext::vector<Restraunt^> restaurants;
 	public: int index;
 	//public: bunifuButton^ buttonRestaurant = gcnew bunifuButton();
 	private: System::Windows::Forms::Panel^  panel3;
@@ -1035,60 +1044,12 @@ private: System::Void button_Close_Click(System::Object^  sender, System::EventA
 	Application::Exit();
 }
 private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show(rests[index]->getName() + " " + index);
-	GlobalClass::order->Show();
-	this->Hide();
-	/*for (int i = 0; i < 20; ++i) {
-		bunifuButton^ button = gcnew bunifuButton();
-		PictureBox^ pic = gcnew PictureBox();
-		bunifuPerc^ perc = gcnew bunifuPerc();
-		this->flowPanelRestaurants->Controls->Add(perc);
-		this->flowPanelRestaurants->Controls->Add(button);
-		this->flowPanelRestaurants->Controls->Add(pic);
-		button->Size = System::Drawing::Size(630, 79);
-		button->Activecolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-		button->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-		button->ButtonText = L"Restaurant 1";
-		this->bunifuFlatButton5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
-			System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-		this->bunifuFlatButton5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-			static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-		button->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-			static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-		button->OnHovercolor = System::Drawing::Color::Maroon;
-		button->OnHoverTextColor = System::Drawing::Color::White;
-		button->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-		button->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-			static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-		button->TextFont = (gcnew System::Drawing::Font(L"Modern No. 20", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		button->IconVisible = false;
-
-		pic->Size = System::Drawing::Size(124, 80);
-		pic->TabIndex = 1;
-		pic->TabStop = false;
-		pic->Load("KFCLogo.png");
-		pic->SizeMode = PictureBoxSizeMode::Zoom;
-		//pic->Dock = System::Windows::Forms::DockStyle::Right;
-
-		perc->Size = System::Drawing::Size(78, 78);
-		perc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		perc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-			static_cast<System::Int32>(static_cast<System::Byte>(0)));
-		perc->ProgressBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-			static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-		perc->ProgressColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-			static_cast<System::Int32>(static_cast<System::Byte>(0)));
-		perc->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(163)),
-			static_cast<System::Int32>(static_cast<System::Byte>(102)));
-		perc->Value = 100;
-		perc->LineProgressThickness = 8;
-		perc->LineThickness = 8;
-		perc->Dock = System::Windows::Forms::DockStyle::Left;
-	}*/
+    bunifuButton^ button = (bunifuButton^)sender;
+    MessageBox::Show(button->Name + " ");
+    index = Convert::ToInt32(button->Name);
+    GlobalClass::order->Show();
+    this->Hide();
+    MessageBox::Show(restaurants[index]->getName() + " " + index);
 }
 private: System::Void Panel_Header_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 }
@@ -1155,49 +1116,54 @@ private: System::Void buttton_AllOffers_Click(System::Object^  sender, System::E
 private: System::Void button_MyBills_Click(System::Object^  sender, System::EventArgs^  e) {
 	GlobalClass::MyBills->ShowDialog();
 }*/
+private: System::Void ShowRestaurants_Load(System::Object^  sender, System::EventArgs^  e) 
+{
+	label_Location->Text = GlobalClass::governate;
+	label_Address->Text = GlobalClass::address;
 
-private: System::Void ShowRestaurants_Load(System::Object^  sender, System::EventArgs^  e) {
-	Convert_strings temp;
-	string Governate = temp.Convert_System_to_std(Globals::GlobalClass::governate);
-	string Address = temp.Convert_System_to_std(Globals::GlobalClass::address);
-	ifstream i("Restraunt.json");
-	json file;
-	i >> file;
-	json area = file[Governate][Address];
-	for (json::iterator it = area.begin(); it != area.end(); ++it)
-	{
-		std::string resturnt = it.key();
-		Restraunt^ r = gcnew Restraunt(temp.Convert_std_to_System(resturnt), temp.Convert_std_to_System(Governate), temp.Convert_std_to_System(Address), area[resturnt]["Deliver Time"]);
-		json mmPath = area[resturnt]["Food"]["Main Meal"];
-		json appPath = area[resturnt]["Food"]["Appetizers"];
-		json desPath = area[resturnt]["Food"]["Desert"];
-		json dPath = area[resturnt]["Food"]["Drinks"];
-		json ssPath = area[resturnt]["Food"]["Side Dishes"];
-		String^ rest_name = temp.Convert_std_to_System(resturnt);
-		json deliveryPath = area[resturnt]["Delivery boy"];
-		json ratePath = area[resturnt]["Rate"];
-		r->mainMeal = r->fill_MainMeal(mmPath, rest_name);
-		r->appetizers = r->fill_Appetizers(appPath, rest_name);
-		r->desserts = r->fill_Desserts(desPath, rest_name);
-		r->drinks = r->fill_Drinks(dPath, rest_name);
-		r->sidedishes = r->fill_SideDishes(ssPath, rest_name);
-		r->deliveryBoys = r->fill_Delivery(deliveryPath);
-		r->setRate(ratePath);
-		rests.push_back(r);
-	}
-	for (int i = 0; i < rests.size(); ++i) {
-		bunifuButton^ button = gcnew bunifuButton();
-		PictureBox^ pic = gcnew PictureBox();
-		bunifuPerc^ perc = gcnew bunifuPerc();
-
+    Convert_strings temp_Convert;
+    string Governate = temp_Convert.Convert_System_to_std(Globals::GlobalClass::governate);
+    string Address = temp_Convert.Convert_System_to_std(Globals::GlobalClass::address);
+    ifstream i("Restraunt.json");
+    json file;
+    i >> file;
+    json area = file[Governate][Address];
+    for (json::iterator it = area.begin(); it != area.end(); ++it)
+    {
+        std::string resturnt = it.key();
+        Restraunt^ r = gcnew Restraunt(temp_Convert.Convert_std_to_System(resturnt), temp_Convert.Convert_std_to_System(Governate), temp_Convert.Convert_std_to_System(Address), area[resturnt]["Deliver Time"]);
+        json mmPath = area[resturnt]["Food"]["Main Meal"];
+        json appPath = area[resturnt]["Food"]["Appetizers"];
+        json desPath = area[resturnt]["Food"]["Desert"];
+        json dPath = area[resturnt]["Food"]["Drinks"];
+        json ssPath = area[resturnt]["Food"]["Side Dishes"];
+        String^ rest_name = temp_Convert.Convert_std_to_System(resturnt);
+        json deliveryPath = area[resturnt]["Delivery boy"];
+        json ratePath = area[resturnt]["Rate"];
+        r->mainMeal = r->fill_MainMeal(mmPath, rest_name);
+        r->appetizers = r->fill_Appetizers(appPath, rest_name);
+        r->desserts = r->fill_Desserts(desPath, rest_name);
+        r->drinks = r->fill_Drinks(dPath, rest_name);
+        r->sidedishes = r->fill_SideDishes(ssPath, rest_name);
+        r->deliveryBoys = r->fill_Delivery(deliveryPath);
+        r->setRate(ratePath);
+        restaurants.push_back(r);
+    }
+    for (int i = 0; i < restaurants.size(); ++i)
+    {
+        bunifuButton^ button = gcnew bunifuButton();
+        PictureBox^ pic = gcnew PictureBox();
+        bunifuPerc^ perc = gcnew bunifuPerc();
 		//button->ButtonText = L"Restaurant 123";	//Name of Restaurant
 		//pic->Load("KFCLogo.png");			//Picture of Restaurant
 		//perc->Value = 75;			//Rating by percentage
 
-		button->ButtonText = rests[i]->getName();	//Name of Restaurant
+		button->ButtonText = restaurants[i]->getName();	//Name of Restaurant
+		//button->Name = rests[i]->name + " :" + i;
+		button->Name = System::Convert::ToString(i);
 		pic->Load("KFCLogo.png");			//Picture of Restaurant
-		double percentage = (rests[i]->getRate() / 5) * 100;
-		perc->Value = percentage;			//Rating by percentage
+		double percentage = (restaurants[i]->getRate() / 5) * 100;
+		perc->Value = int(percentage);			//Rating by percentage
 
 		this->flowPanelRestaurants->Controls->Add(perc);
 		this->flowPanelRestaurants->Controls->Add(button);
@@ -1238,7 +1204,7 @@ private: System::Void ShowRestaurants_Load(System::Object^  sender, System::Even
 		perc->LineProgressThickness = 8;
 		perc->LineThickness = 8;
 		perc->Dock = System::Windows::Forms::DockStyle::Left;
-		index = i;
+	//	index = i;
 		//MessageBox::Show(System::Convert::ToString(i));
 		button->Click += gcnew System::EventHandler(this, &ShowRestaurants::bunifuFlatButton5_Click);
 	}
