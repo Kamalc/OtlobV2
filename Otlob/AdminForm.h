@@ -138,6 +138,8 @@ namespace Otlob {
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  bunifuMaterialTextbox7;
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  textBox_LastName;
 	private: System::Windows::Forms::Label^  label_SignUp;
+private: System::Windows::Forms::Label^  label21;
+private: Bunifu::Framework::UI::BunifuMaterialTextbox^  bunifuMaterialTextbox1;
 
 
 
@@ -167,6 +169,8 @@ namespace Otlob {
             this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
             this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
             this->label9 = (gcnew System::Windows::Forms::Label());
+            this->label21 = (gcnew System::Windows::Forms::Label());
+            this->bunifuMaterialTextbox1 = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
             this->label8 = (gcnew System::Windows::Forms::Label());
             this->Restaurant_Name = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
             this->label7 = (gcnew System::Windows::Forms::Label());
@@ -320,6 +324,8 @@ namespace Otlob {
             this->tabPage1->Controls->Add(this->pictureBox8);
             this->tabPage1->Controls->Add(this->pictureBox7);
             this->tabPage1->Controls->Add(this->label9);
+            this->tabPage1->Controls->Add(this->label21);
+            this->tabPage1->Controls->Add(this->bunifuMaterialTextbox1);
             this->tabPage1->Controls->Add(this->label8);
             this->tabPage1->Controls->Add(this->Restaurant_Name);
             this->tabPage1->Controls->Add(this->label7);
@@ -373,10 +379,41 @@ namespace Otlob {
             this->label9->TabIndex = 17;
             this->label9->Text = L"Delivery Boys";
             // 
+            // label21
+            // 
+            this->label21->AutoSize = true;
+            this->label21->Location = System::Drawing::Point(623, 400);
+            this->label21->Name = L"label21";
+            this->label21->Size = System::Drawing::Size(135, 21);
+            this->label21->TabIndex = 16;
+            this->label21->Text = L"Restaurant Name";
+            this->label21->Click += gcnew System::EventHandler(this, &AdminForm::label21_Click);
+            // 
+            // bunifuMaterialTextbox1
+            // 
+            this->bunifuMaterialTextbox1->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->bunifuMaterialTextbox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+            this->bunifuMaterialTextbox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+            this->bunifuMaterialTextbox1->HintForeColor = System::Drawing::Color::Empty;
+            this->bunifuMaterialTextbox1->HintText = L"";
+            this->bunifuMaterialTextbox1->isPassword = false;
+            this->bunifuMaterialTextbox1->LineFocusedColor = System::Drawing::Color::Maroon;
+            this->bunifuMaterialTextbox1->LineIdleColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+                static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+            this->bunifuMaterialTextbox1->LineMouseHoverColor = System::Drawing::Color::Maroon;
+            this->bunifuMaterialTextbox1->LineThickness = 3;
+            this->bunifuMaterialTextbox1->Location = System::Drawing::Point(762, 383);
+            this->bunifuMaterialTextbox1->Margin = System::Windows::Forms::Padding(4);
+            this->bunifuMaterialTextbox1->Name = L"bunifuMaterialTextbox1";
+            this->bunifuMaterialTextbox1->Size = System::Drawing::Size(183, 38);
+            this->bunifuMaterialTextbox1->TabIndex = 15;
+            this->bunifuMaterialTextbox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            // 
             // label8
             // 
             this->label8->AutoSize = true;
-            this->label8->Location = System::Drawing::Point(341, 460);
+            this->label8->Location = System::Drawing::Point(304, 450);
             this->label8->Name = L"label8";
             this->label8->Size = System::Drawing::Size(135, 21);
             this->label8->TabIndex = 16;
@@ -396,17 +433,18 @@ namespace Otlob {
                 static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
             this->Restaurant_Name->LineMouseHoverColor = System::Drawing::Color::Maroon;
             this->Restaurant_Name->LineThickness = 3;
-            this->Restaurant_Name->Location = System::Drawing::Point(445, 479);
+            this->Restaurant_Name->Location = System::Drawing::Point(408, 469);
             this->Restaurant_Name->Margin = System::Windows::Forms::Padding(4);
             this->Restaurant_Name->Name = L"Restaurant_Name";
             this->Restaurant_Name->Size = System::Drawing::Size(183, 38);
             this->Restaurant_Name->TabIndex = 15;
             this->Restaurant_Name->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->Restaurant_Name->OnValueChanged += gcnew System::EventHandler(this, &AdminForm::Restaurant_Name_OnValueChanged);
             // 
             // label7
             // 
             this->label7->AutoSize = true;
-            this->label7->Location = System::Drawing::Point(356, 376);
+            this->label7->Location = System::Drawing::Point(319, 366);
             this->label7->Name = L"label7";
             this->label7->Size = System::Drawing::Size(57, 21);
             this->label7->TabIndex = 16;
@@ -426,7 +464,7 @@ namespace Otlob {
                 static_cast<System::Int32>(static_cast<System::Byte>(0)));
             this->Phone->LineMouseHoverColor = System::Drawing::Color::Maroon;
             this->Phone->LineThickness = 3;
-            this->Phone->Location = System::Drawing::Point(445, 362);
+            this->Phone->Location = System::Drawing::Point(408, 352);
             this->Phone->Margin = System::Windows::Forms::Padding(4);
             this->Phone->Name = L"Phone";
             this->Phone->Size = System::Drawing::Size(183, 38);
@@ -457,7 +495,7 @@ namespace Otlob {
                 static_cast<System::Int32>(static_cast<System::Byte>(0)));
             this->LastName->LineMouseHoverColor = System::Drawing::Color::Maroon;
             this->LastName->LineThickness = 3;
-            this->LastName->Location = System::Drawing::Point(124, 479);
+            this->LastName->Location = System::Drawing::Point(105, 476);
             this->LastName->Margin = System::Windows::Forms::Padding(4);
             this->LastName->Name = L"LastName";
             this->LastName->Size = System::Drawing::Size(183, 38);
@@ -488,7 +526,7 @@ namespace Otlob {
                 static_cast<System::Int32>(static_cast<System::Byte>(0)));
             this->FirstName->LineMouseHoverColor = System::Drawing::Color::Maroon;
             this->FirstName->LineThickness = 3;
-            this->FirstName->Location = System::Drawing::Point(124, 415);
+            this->FirstName->Location = System::Drawing::Point(105, 412);
             this->FirstName->Margin = System::Windows::Forms::Padding(4);
             this->FirstName->Name = L"FirstName";
             this->FirstName->Size = System::Drawing::Size(183, 38);
@@ -510,17 +548,17 @@ namespace Otlob {
                 static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
             this->TextBox_RemoveByID->LineMouseHoverColor = System::Drawing::Color::Maroon;
             this->TextBox_RemoveByID->LineThickness = 3;
-            this->TextBox_RemoveByID->Location = System::Drawing::Point(680, 409);
+            this->TextBox_RemoveByID->Location = System::Drawing::Point(755, 343);
             this->TextBox_RemoveByID->Margin = System::Windows::Forms::Padding(4);
             this->TextBox_RemoveByID->Name = L"TextBox_RemoveByID";
-            this->TextBox_RemoveByID->Size = System::Drawing::Size(248, 38);
+            this->TextBox_RemoveByID->Size = System::Drawing::Size(103, 21);
             this->TextBox_RemoveByID->TabIndex = 15;
             this->TextBox_RemoveByID->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
             // 
             // label4
             // 
             this->label4->AutoSize = true;
-            this->label4->Location = System::Drawing::Point(676, 368);
+            this->label4->Location = System::Drawing::Point(623, 343);
             this->label4->Name = L"label4";
             this->label4->Size = System::Drawing::Size(115, 21);
             this->label4->TabIndex = 14;
@@ -531,7 +569,7 @@ namespace Otlob {
             this->bunifuSeparator2->BackColor = System::Drawing::Color::Transparent;
             this->bunifuSeparator2->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
                 static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-            this->bunifuSeparator2->LineThickness = 110;
+            this->bunifuSeparator2->LineThickness = 288;
             this->bunifuSeparator2->Location = System::Drawing::Point(0, 324);
             this->bunifuSeparator2->Margin = System::Windows::Forms::Padding(6);
             this->bunifuSeparator2->Name = L"bunifuSeparator2";
@@ -545,8 +583,8 @@ namespace Otlob {
             this->bunifuSeparator1->BackColor = System::Drawing::Color::Transparent;
             this->bunifuSeparator1->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
                 static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-            this->bunifuSeparator1->LineThickness = 153;
-            this->bunifuSeparator1->Location = System::Drawing::Point(647, 324);
+            this->bunifuSeparator1->LineThickness = 425;
+            this->bunifuSeparator1->Location = System::Drawing::Point(604, 327);
             this->bunifuSeparator1->Margin = System::Windows::Forms::Padding(6);
             this->bunifuSeparator1->Name = L"bunifuSeparator1";
             this->bunifuSeparator1->Size = System::Drawing::Size(10, 210);
@@ -583,6 +621,7 @@ namespace Otlob {
             this->DataGrid_Employee->RowTemplate->Height = 24;
             this->DataGrid_Employee->Size = System::Drawing::Size(868, 269);
             this->DataGrid_Employee->TabIndex = 0;
+            this->DataGrid_Employee->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AdminForm::DataGrid_Employee_CellContentClick);
             // 
             // Button_RemoveEmp
             // 
@@ -609,7 +648,7 @@ namespace Otlob {
             this->Button_RemoveEmp->IconVisible = false;
             this->Button_RemoveEmp->IconZoom = 86;
             this->Button_RemoveEmp->IsTab = false;
-            this->Button_RemoveEmp->Location = System::Drawing::Point(680, 469);
+            this->Button_RemoveEmp->Location = System::Drawing::Point(667, 466);
             this->Button_RemoveEmp->Margin = System::Windows::Forms::Padding(6);
             this->Button_RemoveEmp->Name = L"Button_RemoveEmp";
             this->Button_RemoveEmp->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
@@ -617,7 +656,7 @@ namespace Otlob {
             this->Button_RemoveEmp->OnHovercolor = System::Drawing::Color::AntiqueWhite;
             this->Button_RemoveEmp->OnHoverTextColor = System::Drawing::SystemColors::ActiveCaption;
             this->Button_RemoveEmp->selected = false;
-            this->Button_RemoveEmp->Size = System::Drawing::Size(248, 48);
+            this->Button_RemoveEmp->Size = System::Drawing::Size(235, 48);
             this->Button_RemoveEmp->TabIndex = 11;
             this->Button_RemoveEmp->Text = L"Remove";
             this->Button_RemoveEmp->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -2005,12 +2044,27 @@ for (json::iterator it = file.begin(); it != file.end(); it++)
             {
                 if (it_3.key() == RestaurantName)
                 {
-                    json Delivery_Boys = Area[it_3.key()]["Delivery boy"];
-                    std::string ssize = temp.Convert_System_to_std(Convert::ToString((Delivery_Boys.size()) + 1));
-                    MessageBox::Show(temp.Convert_std_to_System(it.key())+" * "+ temp.Convert_std_to_System(it_2.key())+" * "+temp.Convert_std_to_System(it_3.key()));
-                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ssize]["Name"]["First"]=First_Name;
-                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ssize]["Name"]["Last"] = Last_Name;
-                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ssize]["Phone"] = phone;
+                    std::string ID="" ;
+                    json Boys = Area[it_3.key()]["Delivery boy"];
+                    int i = 1;
+                    for (json::iterator it_4 = Boys.begin(); it_4 != Boys.end(); it_4++)
+                    {
+                        if(temp.Convert_std_to_System(it_4.key())!=Convert::ToString(i))
+                        {
+                            MessageBox::Show(temp.Convert_std_to_System(it_4.key()));
+                            MessageBox::Show(Convert::ToString(i));
+                            ID = temp.Convert_System_to_std(Convert::ToString(i));
+                            break;
+                        }
+                        i++;
+                    }
+                    if (ID == "") 
+                    {
+                        ID = temp.Convert_System_to_std(Convert::ToString(i));
+                    }
+                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ID]["Name"]["First"]=First_Name;
+                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ID]["Name"]["Last"] = Last_Name;
+                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ID]["Phone"] = phone;
                     std::ofstream o("Restraunt.json");
                     o << std::setw(4) << file << std::endl;
                     find = 1;
@@ -2027,12 +2081,22 @@ for (json::iterator it = file.begin(); it != file.end(); it++)
             break;
         }
     }
+    if(!find)
+    {
+        MessageBox::Show("Restaurant Name Not found");
+    }
 }
 private: System::Void FirstName_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void LastName_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void Phone_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void DataGrid_Employee_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+}
+private: System::Void Restaurant_Name_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label21_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

@@ -6,7 +6,7 @@ using namespace System;
 using namespace System::Windows::Forms;
 ref class Food 
 {
-public:
+protected:
     String^ name;
     String^ restrauntName;
     String^ Category;
@@ -17,7 +17,11 @@ public:
     //friend Restraunt;
     Food();
     Food(String^ name_, String^ restrauntName_, String^ category_, double price_, int quantity_);
-   
-    
+	String^ get_Name() {
+		return name;
+	}
+	double get_Price() {
+		return price;
+	}
 
 };

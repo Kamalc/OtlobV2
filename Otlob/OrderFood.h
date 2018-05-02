@@ -4,6 +4,7 @@
 #include "Restraunt.h"
 #include <fstream>      
 #include "json.hpp"
+#include"ShowRestaurants.h"
 namespace Otlob {
 
 	using namespace System;
@@ -50,9 +51,9 @@ namespace Otlob {
 				delete components;
 			}
 		}
-	private: cliext::vector<Restraunt^>^ rests = gcnew cliext::vector<Restraunt^>();
-
-	private: System::Windows::Forms::Panel^  panel3;
+    private:cliext::vector<Restraunt^> restaurants;
+    private: Restraunt^ Restraunt_;
+    private: System::Windows::Forms::Panel^  panel3;
 	protected:
 	private: Bunifu::Framework::UI::BunifuGradientPanel^  bunifuGradientPanel3;
 	private: Bunifu::Framework::UI::BunifuGradientPanel^  bunifuGradientPanel2;
@@ -1406,17 +1407,36 @@ private: System::Void Panel_MainMeal_Paint(System::Object^  sender, System::Wind
 }
 
 private: System::Void OrderFood_Load(System::Object^  sender, System::EventArgs^  e) {
-	//Restraunt^ temp;
-	//Convert_strings tmp;
-	//	temp = gcnew Restraunt("Restaurant", "Cairo", "6th of October Hosary and Ahyaa", 60);
-	//	ifstream i("Restraunt.json");
-	//	json file;
-	//	i >> file;
-	//	json area = file["Cairo"]["6th of October Hosary and Ahyaa"];
-	//		json path = area["Food"]["Main Meal"];
-	//		temp->fill_MainMeal(path, /*tmp.Convert_std_to_System*/(temp->name));
-	//		//MessageBox::Show(temp->mainMeal[1]->name + " " + temp->mainMeal[1]->name);
-	for (int i = 0; i < 10; ++i) {
+    Convert_strings temp_Convert;
+    string Governate = temp_Convert.Convert_System_to_std(Globals::GlobalClass::governate);
+    string Address = temp_Convert.Convert_System_to_std(Globals::GlobalClass::address);
+    ifstream i("Restraunt.json");
+    json file;
+    i >> file;
+    json area = file[Governate][Address];
+    for (json::iterator it = area.begin(); it != area.end(); ++it)
+    {
+        std::string resturnt = it.key();
+        Restraunt^ r = gcnew Restraunt(temp_Convert.Convert_std_to_System(resturnt), temp_Convert.Convert_std_to_System(Governate), temp_Convert.Convert_std_to_System(Address), area[resturnt]["Deliver Time"]);
+        json mmPath = area[resturnt]["Food"]["Main Meal"];
+        json appPath = area[resturnt]["Food"]["Appetizers"];
+        json desPath = area[resturnt]["Food"]["Desert"];
+        json dPath = area[resturnt]["Food"]["Drinks"];
+        json ssPath = area[resturnt]["Food"]["Side Dishes"];
+        String^ rest_name = temp_Convert.Convert_std_to_System(resturnt);
+        json deliveryPath = area[resturnt]["Delivery boy"];
+        json ratePath = area[resturnt]["Rate"];
+        r->mainMeal = r->fill_MainMeal(mmPath, rest_name);
+        r->appetizers = r->fill_Appetizers(appPath, rest_name);
+        r->desserts = r->fill_Desserts(desPath, rest_name);
+        r->drinks = r->fill_Drinks(dPath, rest_name);
+        r->sidedishes = r->fill_SideDishes(ssPath, rest_name);
+        r->deliveryBoys = r->fill_Delivery(deliveryPath);
+        r->setRate(ratePath);
+        restaurants.push_back(r);
+    }
+    Restraunt_ = restaurants[GlobalClass::index];
+	for (int i = 0; i < Restraunt_->mainMeal.size(); ++i) {
 		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
 		panelEachFood->AutoSize = true;
 		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
@@ -1444,7 +1464,7 @@ private: System::Void OrderFood_Load(System::Object^  sender, System::EventArgs^
 		panelEachFood->Controls->Add(check_b);
 		this->Panel_MainMeal->Controls->Add(panelEachFood);
 	}
-	for (int i = 0; i < 10; ++i) {
+	for (int i = 0; i < Restraunt_->desserts.size(); ++i) {
 		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
 		panelEachFood->AutoSize = true;
 		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
@@ -1471,7 +1491,7 @@ private: System::Void OrderFood_Load(System::Object^  sender, System::EventArgs^
 		panelEachFood->Controls->Add(check_b);
 		this->Panel_Desert->Controls->Add(panelEachFood);
 	}
-	for (int i = 0; i < 10; ++i) {
+	for (int i = 0; i < Restraunt_->sidedishes.size(); ++i) {
 		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
 		panelEachFood->AutoSize = true;
 		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
@@ -1498,7 +1518,7 @@ private: System::Void OrderFood_Load(System::Object^  sender, System::EventArgs^
 		panelEachFood->Controls->Add(check_b);
 		this->Panel_SidePlates->Controls->Add(panelEachFood);
 	}
-	for (int i = 0; i < 10; ++i) {
+	for (int i = 0; i < Restraunt_->drinks.size(); ++i) {
 		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
 		panelEachFood->AutoSize = true;
 		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
@@ -1525,7 +1545,7 @@ private: System::Void OrderFood_Load(System::Object^  sender, System::EventArgs^
 		panelEachFood->Controls->Add(check_b);
 		this->Panel_Drinks->Controls->Add(panelEachFood);
 	}
-	for (int i = 0; i < 10; ++i) {
+	for (int i = 0; i < Restraunt_->appetizers.size(); ++i) {
 		FlowLayoutPanel^ panelEachFood = gcnew FlowLayoutPanel();
 		panelEachFood->AutoSize = true;
 		panelEachFood->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;

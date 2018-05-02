@@ -162,180 +162,8 @@
         }
     },
     "Cairo": {
-        "6th of October - Industrial Section": {
-            "Chilis Mall Of Arabia": {
-                "Deliver Time": 60,
-                "Delivery boy": {
-                    "1": {
-                        "Name": {
-                            "First": "Ahmed",
-                            "Last": "Ali"
-                        },
-                        "Phone": "0111215645"
-                    },
-                    "2": {
-                        "Name": {
-                            "First": "KIMO",
-                            "Last": "Saad"
-                        },
-                        "Phone": "0109115295"
-                    }
-                },
-                "Food": {
-                    "Appetizers": {
-                        " Classic Nachos": {
-                            "Price": 44.99,
-                            "Quantity": 36
-                        }
-                    },
-                    "Desert": {
-                        "Apple Cobbler": {
-                            "Price": 44.99,
-                            "Quantity": 13
-                        }
-                    },
-                    "Drinks": {
-                        "Lemon Juice": {
-                            "Price": 24.99,
-                            "Quantity": 500
-                        }
-                    },
-                    "Main Meal": {
-                        "Boneless Buffalo Wings": {
-                            "Category": "Grill",
-                            "Price": 49.99,
-                            "Quantity": 27
-                        },
-                        "Texas Cheese Fries": {
-                            "Category": "Grill",
-                            "Price": 39.99,
-                            "Quantity": 20
-                        }
-                    },
-                    "Side Dishes": {
-                        "Mashed Potato with Black Pepper Gravy": {
-                            "Price": 14.99,
-                            "Quantity": 29
-                        }
-                    }
-                },
-                "Rate": {
-                    "1": 4,
-                    "2": 3,
-                    "3": 4,
-                    "4": 5
-                }
-            },
-            "McDonald's Glory Mall": {
-                "Deliver Time": 35,
-                "Delivery boy": {
-                    "1": {
-                        "Name": {
-                            "First": "Ahmed",
-                            "Last": "Ali"
-                        },
-                        "Phone": "0111215645"
-                    }
-                },
-                "Food": {
-                    "Appetizers": {
-                        "Extra Happy Meal Toy": {
-                            "Price": 10.53,
-                            "Quantity": 123
-                        }
-                    },
-                    "Desert": {
-                        "McFlurry Oreo": {
-                            "Price": 17.35,
-                            "Quantity": 30
-                        }
-                    },
-                    "Drinks": {
-                        "Coffee Latte": {
-                            "Price": 13.95,
-                            "Quantity": 500
-                        }
-                    },
-                    "Main Meal": {
-                        "50 Years Big Mac Large": {
-                            "Category": "Sandwich",
-                            "Price": 128.6,
-                            "Quantity": 150
-                        },
-                        "Big Mac Sandwich": {
-                            "Category": "Sandwich",
-                            "Price": 50,
-                            "Quantity": 230
-                        }
-                    },
-                    "Side Dishes": {
-                        "McDonald's Fries": {
-                            "Price": 17.5,
-                            "Quantity": 205
-                        }
-                    }
-                },
-                "Rate": {
-                    "1": 4,
-                    "2": 3,
-                    "3": 4,
-                    "4": 5
-                }
-            },
-            "Pizza Hut 6th Of October": {
-                "Deliver Time": 60,
-                "Delivery boy": {
-                    "1": {
-                        "Name": {
-                            "First": "Ahmed",
-                            "Last": "Ali"
-                        },
-                        "Phone": "0111215645"
-                    }
-                },
-                "Food": {
-                    "Appetizers": {},
-                    "Desert": {
-                        "Apple Pie": {
-                            "Price": 19.95,
-                            "Quantity": 39
-                        }
-                    },
-                    "Drinks": {
-                        "Pepsi": {
-                            "Price": 24.99,
-                            "Quantity": 500
-                        }
-                    },
-                    "Main Meal": {
-                        "Extreme Pizza Meal": {
-                            "Category": "Pizza",
-                            "Price": 180,
-                            "Quantity": 150
-                        },
-                        "Pan Pizza - Hot  Spicy": {
-                            "Category": "Pizza",
-                            "Price": 78.99,
-                            "Quantity": 260
-                        }
-                    },
-                    "Side Dishes": {
-                        "Fiery Twister Box": {
-                            "Price": 25.25,
-                            "Quantity": 205
-                        }
-                    }
-                },
-                "Rate": {
-                    "1": 4,
-                    "2": 3,
-                    "3": 4,
-                    "4": 5
-                }
-            }
-        },
         "6th of October Hosary and Ahyaa": {
-            "Chilis Mall Of Arabia": {
+            "Chilis Mall Of Arabia Hosary and Ahyaa": {
                 "Deliver Time": 60,
                 "Delivery boy": {
                     "1": {
@@ -456,7 +284,7 @@
                     "4": 5
                 }
             },
-            "McDonald's 6-th of October": {
+            "McDonald's 6th of October Hosary and Ahyaa": {
                 "Deliver Time": 45,
                 "Delivery boy": {
                     "1": {
@@ -501,6 +329,241 @@
                     "Side Dishes": {
                         "Garden Salad": {
                             "Price": 6.24,
+                            "Quantity": 205
+                        }
+                    }
+                },
+                "Rate": {
+                    "1": 4,
+                    "2": 3,
+                    "3": 4,
+                    "4": 5
+                }
+            }
+        },
+        "6th of October Industrial Section": {
+            "Chilis Mall Of Arabia Industrial Section": {
+                "Deliver Time": 60,
+                "Delivery boy": {
+                    "1": {
+                        "Name": {
+                            "First": "Ahmed",
+                            "Last": "Ali"
+                        },
+                        "Phone": "0111215645"
+                    },
+                    "2": {
+                        "Name": {
+                            "First": "KIMO",
+                            "Last": "Saad"
+                        },
+                        "Phone": "0109115295"
+                    },
+                    "3": {
+                        "Name": {
+                            "First": "kiko",
+                            "Last": "kimozzzz"
+                        },
+                        "Phone": "01091159295"
+                    },
+                    "4": {
+                        "Name": {
+                            "First": "kiko",
+                            "Last": "kimozzzz"
+                        },
+                        "Phone": "01091159295"
+                    }
+                },
+                "Food": {
+                    "Appetizers": {
+                        " Classic Nachos": {
+                            "Price": 44.99,
+                            "Quantity": 36
+                        }
+                    },
+                    "Desert": {
+                        "Apple Cobbler": {
+                            "Price": 44.99,
+                            "Quantity": 13
+                        }
+                    },
+                    "Drinks": {
+                        "Lemon Juice": {
+                            "Price": 24.99,
+                            "Quantity": 500
+                        }
+                    },
+                    "Main Meal": {
+                        "Boneless Buffalo Wings": {
+                            "Category": "Grill",
+                            "Price": 49.99,
+                            "Quantity": 27
+                        },
+                        "Texas Cheese Fries": {
+                            "Category": "Grill",
+                            "Price": 39.99,
+                            "Quantity": 20
+                        }
+                    },
+                    "Side Dishes": {
+                        "Mashed Potato with Black Pepper Gravy": {
+                            "Price": 14.99,
+                            "Quantity": 29
+                        }
+                    }
+                },
+                "Rate": {
+                    "1": 4,
+                    "2": 3,
+                    "3": 4,
+                    "4": 5
+                }
+            },
+            "McDonald's Glory Mall ": {
+                "Deliver Time": 35,
+                "Delivery boy": {
+                    "1": {
+                        "Name": {
+                            "First": "Kimo",
+                            "Last": "Saad"
+                        },
+                        "Phone": "45169321"
+                    },
+                    "2": {
+                        "Name": {
+                            "First": "therd",
+                            "Last": "2435513"
+                        },
+                        "Phone": "1232354545"
+                    },
+                    "3": {
+                        "Name": {
+                            "First": "Kimo",
+                            "Last": "Saad"
+                        },
+                        "Phone": "12394758"
+                    },
+                    "4": {
+                        "Name": {
+                            "First": "Kimo",
+                            "Last": "Saad"
+                        },
+                        "Phone": "12394758"
+                    },
+                    "5": {
+                        "Name": {
+                            "First": "Five",
+                            "Last": "13232465"
+                        },
+                        "Phone": "13254"
+                    },
+                    "6": {
+                        "Name": {
+                            "First": "Kimo",
+                            "Last": "Saad"
+                        },
+                        "Phone": "12394758"
+                    },
+                    "7": {
+                        "Name": {
+                            "First": "Kimo",
+                            "Last": "Saad"
+                        },
+                        "Phone": "12394758"
+                    },
+                    "8": {
+                        "Name": {
+                            "First": "Kimo",
+                            "Last": "Saad"
+                        },
+                        "Phone": "12394758"
+                    }
+                },
+                "Food": {
+                    "Appetizers": {
+                        "Extra Happy Meal Toy": {
+                            "Price": 10.53,
+                            "Quantity": 123
+                        }
+                    },
+                    "Desert": {
+                        "McFlurry Oreo": {
+                            "Price": 17.35,
+                            "Quantity": 30
+                        }
+                    },
+                    "Drinks": {
+                        "Coffee Latte": {
+                            "Price": 13.95,
+                            "Quantity": 500
+                        }
+                    },
+                    "Main Meal": {
+                        "50 Years Big Mac Large": {
+                            "Category": "Sandwich",
+                            "Price": 128.6,
+                            "Quantity": 150
+                        },
+                        "Big Mac Sandwich": {
+                            "Category": "Sandwich",
+                            "Price": 50,
+                            "Quantity": 230
+                        }
+                    },
+                    "Side Dishes": {
+                        "McDonald's Fries": {
+                            "Price": 17.5,
+                            "Quantity": 205
+                        }
+                    }
+                },
+                "Rate": {
+                    "1": 4,
+                    "2": 3,
+                    "3": 4,
+                    "4": 5
+                }
+            },
+            "Pizza Hut 6th Of October": {
+                "Deliver Time": 60,
+                "Delivery boy": {
+                    "1": {
+                        "Name": {
+                            "First": "Ahmed",
+                            "Last": "Ali"
+                        },
+                        "Phone": "0111215645"
+                    }
+                },
+                "Food": {
+                    "Appetizers": {},
+                    "Desert": {
+                        "Apple Pie": {
+                            "Price": 19.95,
+                            "Quantity": 39
+                        }
+                    },
+                    "Drinks": {
+                        "Pepsi": {
+                            "Price": 24.99,
+                            "Quantity": 500
+                        }
+                    },
+                    "Main Meal": {
+                        "Extreme Pizza Meal": {
+                            "Category": "Pizza",
+                            "Price": 180,
+                            "Quantity": 150
+                        },
+                        "Pan Pizza - Hot  Spicy": {
+                            "Category": "Pizza",
+                            "Price": 78.99,
+                            "Quantity": 260
+                        }
+                    },
+                    "Side Dishes": {
+                        "Fiery Twister Box": {
+                            "Price": 25.25,
                             "Quantity": 205
                         }
                     }

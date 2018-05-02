@@ -2,6 +2,7 @@
 #include "Global.h"
 #include "Profile.h"
 #include <fstream>      
+#include "json.hpp"
 #include <cstdlib>
 #include "Convert_strings.h"
 #include "Restraunt.h"
@@ -115,7 +116,8 @@ namespace Otlob {
 	private: System::Windows::Forms::PictureBox^  pictureBox13;
 	private: System::Windows::Forms::PictureBox^  pictureBox12;
 	private: System::Windows::Forms::PictureBox^  pictureBox11;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox1;
+	private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_Grill;
+
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::Label^  label11;
@@ -124,13 +126,19 @@ namespace Otlob {
 	private: System::Windows::Forms::Label^  label8;
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::Label^  label6;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox8;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox7;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox6;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox5;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox4;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox3;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox2;
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_JapanFood;
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_Shawermas;
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_FastFood;
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_SandWiches;
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_Oriental;
+
+
+
+
+
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_Pizza;
+
+
 	private: System::Windows::Forms::PictureBox^  pictureBox18;
 	private: System::Windows::Forms::PictureBox^  pictureBox17;
 	private: System::Windows::Forms::PictureBox^  pictureBox16;
@@ -138,6 +146,10 @@ namespace Otlob {
 	private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton5;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  Button_Profile;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  button_SignOut;
+private: System::Windows::Forms::Label^  label3;
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_All;
+
+private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_SeaFood;
 
 
 
@@ -199,14 +211,14 @@ namespace Otlob {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->bunifuCheckbox8 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->bunifuCheckbox7 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->bunifuCheckbox6 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->bunifuCheckbox5 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->bunifuCheckbox4 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->bunifuCheckbox3 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->bunifuCheckbox2 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->bunifuCheckbox1 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_JapanFood = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_Shawermas = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_FastFood = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_SandWiches = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_Oriental = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_Pizza = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_SeaFood = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->checkBox_Grill = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
 			this->pictureBox18 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox14 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox17 = (gcnew System::Windows::Forms::PictureBox());
@@ -228,6 +240,8 @@ namespace Otlob {
 			this->comboBox_Address = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->checkBox_All = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->Panel_Header->SuspendLayout();
@@ -307,7 +321,7 @@ namespace Otlob {
 			this->bunifuFlatButton5->IconZoom = 80;
 			this->bunifuFlatButton5->IsTab = false;
 			this->bunifuFlatButton5->Location = System::Drawing::Point(0, 576);
-			this->bunifuFlatButton5->Margin = System::Windows::Forms::Padding(6);
+			this->bunifuFlatButton5->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->bunifuFlatButton5->Name = L"bunifuFlatButton5";
 			this->bunifuFlatButton5->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -349,7 +363,7 @@ namespace Otlob {
 			this->button_MyBills->IconZoom = 80;
 			this->button_MyBills->IsTab = false;
 			this->button_MyBills->Location = System::Drawing::Point(0, 439);
-			this->button_MyBills->Margin = System::Windows::Forms::Padding(6);
+			this->button_MyBills->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->button_MyBills->Name = L"button_MyBills";
 			this->button_MyBills->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -391,7 +405,7 @@ namespace Otlob {
 			this->buttton_AllOffers->IconZoom = 80;
 			this->buttton_AllOffers->IsTab = false;
 			this->buttton_AllOffers->Location = System::Drawing::Point(0, 366);
-			this->buttton_AllOffers->Margin = System::Windows::Forms::Padding(6);
+			this->buttton_AllOffers->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->buttton_AllOffers->Name = L"buttton_AllOffers";
 			this->buttton_AllOffers->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -433,7 +447,7 @@ namespace Otlob {
 			this->buttton_Foods->IconZoom = 80;
 			this->buttton_Foods->IsTab = false;
 			this->buttton_Foods->Location = System::Drawing::Point(0, 291);
-			this->buttton_Foods->Margin = System::Windows::Forms::Padding(6);
+			this->buttton_Foods->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->buttton_Foods->Name = L"buttton_Foods";
 			this->buttton_Foods->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -475,7 +489,7 @@ namespace Otlob {
 			this->button_AllRestaurants->IconZoom = 80;
 			this->button_AllRestaurants->IsTab = false;
 			this->button_AllRestaurants->Location = System::Drawing::Point(0, 216);
-			this->button_AllRestaurants->Margin = System::Windows::Forms::Padding(6);
+			this->button_AllRestaurants->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->button_AllRestaurants->Name = L"button_AllRestaurants";
 			this->button_AllRestaurants->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -502,7 +516,7 @@ namespace Otlob {
 			this->label2->Location = System::Drawing::Point(26, 23);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(155, 83);
+			this->label2->Size = System::Drawing::Size(197, 105);
 			this->label2->TabIndex = 10;
 			this->label2->Text = L"OTlob";
 			this->label2->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::panel1_MouseDown);
@@ -535,7 +549,7 @@ namespace Otlob {
 			this->Button_SignUp->IconZoom = 50;
 			this->Button_SignUp->IsTab = false;
 			this->Button_SignUp->Location = System::Drawing::Point(550, -1);
-			this->Button_SignUp->Margin = System::Windows::Forms::Padding(6);
+			this->Button_SignUp->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->Button_SignUp->Name = L"Button_SignUp";
 			this->Button_SignUp->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -577,7 +591,7 @@ namespace Otlob {
 			this->button_SignIn->IconZoom = 50;
 			this->button_SignIn->IsTab = false;
 			this->button_SignIn->Location = System::Drawing::Point(718, -1);
-			this->button_SignIn->Margin = System::Windows::Forms::Padding(6);
+			this->button_SignIn->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->button_SignIn->Name = L"button_SignIn";
 			this->button_SignIn->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -688,7 +702,7 @@ namespace Otlob {
 			this->button_SignOut->IconZoom = 90;
 			this->button_SignOut->IsTab = false;
 			this->button_SignOut->Location = System::Drawing::Point(66, -1);
-			this->button_SignOut->Margin = System::Windows::Forms::Padding(6);
+			this->button_SignOut->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->button_SignOut->Name = L"button_SignOut";
 			this->button_SignOut->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -712,7 +726,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->label_Username->Location = System::Drawing::Point(812, 18);
 			this->label_Username->Name = L"label_Username";
-			this->label_Username->Size = System::Drawing::Size(0, 20);
+			this->label_Username->Size = System::Drawing::Size(0, 25);
 			this->label_Username->TabIndex = 0;
 			// 
 			// label_UsernameN
@@ -724,7 +738,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(102)));
 			this->label_UsernameN->Location = System::Drawing::Point(709, 18);
 			this->label_UsernameN->Name = L"label_UsernameN";
-			this->label_UsernameN->Size = System::Drawing::Size(98, 20);
+			this->label_UsernameN->Size = System::Drawing::Size(120, 25);
 			this->label_UsernameN->TabIndex = 0;
 			this->label_UsernameN->Text = L"username :";
 			this->label_UsernameN->Visible = false;
@@ -756,7 +770,7 @@ namespace Otlob {
 			this->Button_Profile->IconZoom = 70;
 			this->Button_Profile->IsTab = false;
 			this->Button_Profile->Location = System::Drawing::Point(550, -1);
-			this->Button_Profile->Margin = System::Windows::Forms::Padding(6);
+			this->Button_Profile->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->Button_Profile->Name = L"Button_Profile";
 			this->Button_Profile->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -783,15 +797,17 @@ namespace Otlob {
 			this->panel3->Controls->Add(this->label9);
 			this->panel3->Controls->Add(this->label8);
 			this->panel3->Controls->Add(this->label7);
+			this->panel3->Controls->Add(this->label3);
 			this->panel3->Controls->Add(this->label6);
-			this->panel3->Controls->Add(this->bunifuCheckbox8);
-			this->panel3->Controls->Add(this->bunifuCheckbox7);
-			this->panel3->Controls->Add(this->bunifuCheckbox6);
-			this->panel3->Controls->Add(this->bunifuCheckbox5);
-			this->panel3->Controls->Add(this->bunifuCheckbox4);
-			this->panel3->Controls->Add(this->bunifuCheckbox3);
-			this->panel3->Controls->Add(this->bunifuCheckbox2);
-			this->panel3->Controls->Add(this->bunifuCheckbox1);
+			this->panel3->Controls->Add(this->checkBox_JapanFood);
+			this->panel3->Controls->Add(this->checkBox_Shawermas);
+			this->panel3->Controls->Add(this->checkBox_FastFood);
+			this->panel3->Controls->Add(this->checkBox_SandWiches);
+			this->panel3->Controls->Add(this->checkBox_Oriental);
+			this->panel3->Controls->Add(this->checkBox_Pizza);
+			this->panel3->Controls->Add(this->checkBox_All);
+			this->panel3->Controls->Add(this->checkBox_SeaFood);
+			this->panel3->Controls->Add(this->checkBox_Grill);
 			this->panel3->Controls->Add(this->pictureBox18);
 			this->panel3->Controls->Add(this->pictureBox14);
 			this->panel3->Controls->Add(this->pictureBox17);
@@ -829,7 +845,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label13->Location = System::Drawing::Point(473, 515);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(95, 20);
+			this->label13->Size = System::Drawing::Size(119, 25);
 			this->label13->TabIndex = 15;
 			this->label13->Text = L"Sandwiches";
 			// 
@@ -840,7 +856,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label12->Location = System::Drawing::Point(473, 485);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(82, 20);
+			this->label12->Size = System::Drawing::Size(100, 25);
 			this->label12->TabIndex = 15;
 			this->label12->Text = L"Fast Food";
 			// 
@@ -851,7 +867,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label11->Location = System::Drawing::Point(473, 455);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(93, 20);
+			this->label11->Size = System::Drawing::Size(116, 25);
 			this->label11->TabIndex = 15;
 			this->label11->Text = L"Shawermas";
 			// 
@@ -862,7 +878,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label10->Location = System::Drawing::Point(473, 425);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(94, 20);
+			this->label10->Size = System::Drawing::Size(117, 25);
 			this->label10->TabIndex = 15;
 			this->label10->Text = L"Japan Food";
 			// 
@@ -873,7 +889,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label9->Location = System::Drawing::Point(255, 515);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(64, 20);
+			this->label9->Size = System::Drawing::Size(80, 25);
 			this->label9->TabIndex = 15;
 			this->label9->Text = L"Oriental";
 			// 
@@ -884,7 +900,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(255, 485);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(47, 20);
+			this->label8->Size = System::Drawing::Size(60, 25);
 			this->label8->TabIndex = 15;
 			this->label8->Text = L"Pizza";
 			// 
@@ -895,7 +911,7 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(255, 455);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(74, 20);
+			this->label7->Size = System::Drawing::Size(91, 25);
 			this->label7->TabIndex = 15;
 			this->label7->Text = L"Sea food";
 			// 
@@ -906,129 +922,129 @@ namespace Otlob {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(255, 425);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(36, 20);
+			this->label6->Size = System::Drawing::Size(45, 25);
 			this->label6->TabIndex = 15;
 			this->label6->Text = L"Grill";
 			// 
-			// bunifuCheckbox8
+			// checkBox_JapanFood
 			// 
-			this->bunifuCheckbox8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox8->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_JapanFood->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox8->Checked = false;
-			this->bunifuCheckbox8->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox8->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox8->Location = System::Drawing::Point(439, 428);
-			this->bunifuCheckbox8->Margin = System::Windows::Forms::Padding(72, 83, 72, 83);
-			this->bunifuCheckbox8->Name = L"bunifuCheckbox8";
-			this->bunifuCheckbox8->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox8->TabIndex = 14;
-			// 
-			// bunifuCheckbox7
-			// 
-			this->bunifuCheckbox7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox7->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_JapanFood->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox7->Checked = false;
-			this->bunifuCheckbox7->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox7->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox7->Location = System::Drawing::Point(439, 458);
-			this->bunifuCheckbox7->Margin = System::Windows::Forms::Padding(48, 53, 48, 53);
-			this->bunifuCheckbox7->Name = L"bunifuCheckbox7";
-			this->bunifuCheckbox7->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox7->TabIndex = 14;
+			this->checkBox_JapanFood->Checked = false;
+			this->checkBox_JapanFood->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_JapanFood->ForeColor = System::Drawing::Color::White;
+			this->checkBox_JapanFood->Location = System::Drawing::Point(439, 428);
+			this->checkBox_JapanFood->Margin = System::Windows::Forms::Padding(72, 83, 72, 83);
+			this->checkBox_JapanFood->Name = L"checkBox_JapanFood";
+			this->checkBox_JapanFood->Size = System::Drawing::Size(20, 20);
+			this->checkBox_JapanFood->TabIndex = 14;
 			// 
-			// bunifuCheckbox6
+			// checkBox_Shawermas
 			// 
-			this->bunifuCheckbox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox6->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_Shawermas->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox6->Checked = false;
-			this->bunifuCheckbox6->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox6->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox6->Location = System::Drawing::Point(439, 488);
-			this->bunifuCheckbox6->Margin = System::Windows::Forms::Padding(32, 34, 32, 34);
-			this->bunifuCheckbox6->Name = L"bunifuCheckbox6";
-			this->bunifuCheckbox6->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox6->TabIndex = 14;
-			// 
-			// bunifuCheckbox5
-			// 
-			this->bunifuCheckbox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox5->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_Shawermas->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox5->Checked = false;
-			this->bunifuCheckbox5->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox5->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox5->Location = System::Drawing::Point(439, 518);
-			this->bunifuCheckbox5->Margin = System::Windows::Forms::Padding(21, 22, 21, 22);
-			this->bunifuCheckbox5->Name = L"bunifuCheckbox5";
-			this->bunifuCheckbox5->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox5->TabIndex = 14;
+			this->checkBox_Shawermas->Checked = false;
+			this->checkBox_Shawermas->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_Shawermas->ForeColor = System::Drawing::Color::White;
+			this->checkBox_Shawermas->Location = System::Drawing::Point(439, 458);
+			this->checkBox_Shawermas->Margin = System::Windows::Forms::Padding(48, 53, 48, 53);
+			this->checkBox_Shawermas->Name = L"checkBox_Shawermas";
+			this->checkBox_Shawermas->Size = System::Drawing::Size(20, 20);
+			this->checkBox_Shawermas->TabIndex = 14;
 			// 
-			// bunifuCheckbox4
+			// checkBox_FastFood
 			// 
-			this->bunifuCheckbox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox4->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_FastFood->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox4->Checked = false;
-			this->bunifuCheckbox4->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox4->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox4->Location = System::Drawing::Point(225, 518);
-			this->bunifuCheckbox4->Margin = System::Windows::Forms::Padding(14);
-			this->bunifuCheckbox4->Name = L"bunifuCheckbox4";
-			this->bunifuCheckbox4->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox4->TabIndex = 14;
-			// 
-			// bunifuCheckbox3
-			// 
-			this->bunifuCheckbox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox3->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_FastFood->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox3->Checked = false;
-			this->bunifuCheckbox3->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox3->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox3->Location = System::Drawing::Point(225, 488);
-			this->bunifuCheckbox3->Margin = System::Windows::Forms::Padding(9);
-			this->bunifuCheckbox3->Name = L"bunifuCheckbox3";
-			this->bunifuCheckbox3->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox3->TabIndex = 14;
+			this->checkBox_FastFood->Checked = false;
+			this->checkBox_FastFood->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_FastFood->ForeColor = System::Drawing::Color::White;
+			this->checkBox_FastFood->Location = System::Drawing::Point(439, 488);
+			this->checkBox_FastFood->Margin = System::Windows::Forms::Padding(32, 34, 32, 34);
+			this->checkBox_FastFood->Name = L"checkBox_FastFood";
+			this->checkBox_FastFood->Size = System::Drawing::Size(20, 20);
+			this->checkBox_FastFood->TabIndex = 14;
 			// 
-			// bunifuCheckbox2
+			// checkBox_SandWiches
 			// 
-			this->bunifuCheckbox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox2->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_SandWiches->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox2->Checked = false;
-			this->bunifuCheckbox2->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox2->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox2->Location = System::Drawing::Point(225, 458);
-			this->bunifuCheckbox2->Margin = System::Windows::Forms::Padding(6);
-			this->bunifuCheckbox2->Name = L"bunifuCheckbox2";
-			this->bunifuCheckbox2->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox2->TabIndex = 14;
-			// 
-			// bunifuCheckbox1
-			// 
-			this->bunifuCheckbox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox1->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+			this->checkBox_SandWiches->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuCheckbox1->Checked = false;
-			this->bunifuCheckbox1->CheckedOnColor = System::Drawing::Color::Maroon;
-			this->bunifuCheckbox1->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox1->Location = System::Drawing::Point(225, 428);
-			this->bunifuCheckbox1->Margin = System::Windows::Forms::Padding(6);
-			this->bunifuCheckbox1->Name = L"bunifuCheckbox1";
-			this->bunifuCheckbox1->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox1->TabIndex = 13;
+			this->checkBox_SandWiches->Checked = false;
+			this->checkBox_SandWiches->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_SandWiches->ForeColor = System::Drawing::Color::White;
+			this->checkBox_SandWiches->Location = System::Drawing::Point(439, 518);
+			this->checkBox_SandWiches->Margin = System::Windows::Forms::Padding(21, 22, 21, 22);
+			this->checkBox_SandWiches->Name = L"checkBox_SandWiches";
+			this->checkBox_SandWiches->Size = System::Drawing::Size(20, 20);
+			this->checkBox_SandWiches->TabIndex = 14;
+			// 
+			// checkBox_Oriental
+			// 
+			this->checkBox_Oriental->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_Oriental->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_Oriental->Checked = false;
+			this->checkBox_Oriental->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_Oriental->ForeColor = System::Drawing::Color::White;
+			this->checkBox_Oriental->Location = System::Drawing::Point(225, 518);
+			this->checkBox_Oriental->Margin = System::Windows::Forms::Padding(14);
+			this->checkBox_Oriental->Name = L"checkBox_Oriental";
+			this->checkBox_Oriental->Size = System::Drawing::Size(20, 20);
+			this->checkBox_Oriental->TabIndex = 14;
+			// 
+			// checkBox_Pizza
+			// 
+			this->checkBox_Pizza->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_Pizza->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_Pizza->Checked = false;
+			this->checkBox_Pizza->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_Pizza->ForeColor = System::Drawing::Color::White;
+			this->checkBox_Pizza->Location = System::Drawing::Point(225, 488);
+			this->checkBox_Pizza->Margin = System::Windows::Forms::Padding(9);
+			this->checkBox_Pizza->Name = L"checkBox_Pizza";
+			this->checkBox_Pizza->Size = System::Drawing::Size(20, 20);
+			this->checkBox_Pizza->TabIndex = 14;
+			// 
+			// checkBox_SeaFood
+			// 
+			this->checkBox_SeaFood->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_SeaFood->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_SeaFood->Checked = false;
+			this->checkBox_SeaFood->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_SeaFood->ForeColor = System::Drawing::Color::White;
+			this->checkBox_SeaFood->Location = System::Drawing::Point(225, 458);
+			this->checkBox_SeaFood->Margin = System::Windows::Forms::Padding(6);
+			this->checkBox_SeaFood->Name = L"checkBox_SeaFood";
+			this->checkBox_SeaFood->Size = System::Drawing::Size(20, 20);
+			this->checkBox_SeaFood->TabIndex = 14;
+			// 
+			// checkBox_Grill
+			// 
+			this->checkBox_Grill->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_Grill->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_Grill->Checked = false;
+			this->checkBox_Grill->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_Grill->ForeColor = System::Drawing::Color::White;
+			this->checkBox_Grill->Location = System::Drawing::Point(225, 428);
+			this->checkBox_Grill->Margin = System::Windows::Forms::Padding(6);
+			this->checkBox_Grill->Name = L"checkBox_Grill";
+			this->checkBox_Grill->Size = System::Drawing::Size(20, 20);
+			this->checkBox_Grill->TabIndex = 13;
 			// 
 			// pictureBox18
 			// 
@@ -1227,7 +1243,7 @@ namespace Otlob {
 			this->Button_ShowRs->IconZoom = 50;
 			this->Button_ShowRs->IsTab = false;
 			this->Button_ShowRs->Location = System::Drawing::Point(583, 352);
-			this->Button_ShowRs->Margin = System::Windows::Forms::Padding(6);
+			this->Button_ShowRs->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->Button_ShowRs->Name = L"Button_ShowRs";
 			this->Button_ShowRs->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
@@ -1255,7 +1271,7 @@ namespace Otlob {
 			this->comboBox_Address->FormattingEnabled = true;
 			this->comboBox_Address->Location = System::Drawing::Point(327, 352);
 			this->comboBox_Address->Name = L"comboBox_Address";
-			this->comboBox_Address->Size = System::Drawing::Size(227, 30);
+			this->comboBox_Address->Size = System::Drawing::Size(227, 34);
 			this->comboBox_Address->TabIndex = 7;
 			this->comboBox_Address->Text = L"Address/ Area";
 			// 
@@ -1272,7 +1288,7 @@ namespace Otlob {
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Cairo", L"Alexandria" });
 			this->comboBox1->Location = System::Drawing::Point(75, 352);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(227, 30);
+			this->comboBox1->Size = System::Drawing::Size(227, 34);
 			this->comboBox1->TabIndex = 8;
 			this->comboBox1->Text = L"Governorate";
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Home::comboBox1_SelectedIndexChanged);
@@ -1286,13 +1302,39 @@ namespace Otlob {
 			this->label1->Location = System::Drawing::Point(161, 78);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(328, 175);
+			this->label1->Size = System::Drawing::Size(411, 219);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"OTlob";
 			// 
+			// checkBox_All
+			// 
+			this->checkBox_All->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_All->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->checkBox_All->Checked = false;
+			this->checkBox_All->CheckedOnColor = System::Drawing::Color::Maroon;
+			this->checkBox_All->ForeColor = System::Drawing::Color::White;
+			this->checkBox_All->Location = System::Drawing::Point(81, 461);
+			this->checkBox_All->Margin = System::Windows::Forms::Padding(9, 9, 9, 9);
+			this->checkBox_All->Name = L"checkBox_All";
+			this->checkBox_All->Size = System::Drawing::Size(20, 20);
+			this->checkBox_All->TabIndex = 13;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(111, 458);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(34, 25);
+			this->label3->TabIndex = 15;
+			this->label3->Text = L"All";
+			// 
 			// Home
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::BurlyWood;
 			this->ClientSize = System::Drawing::Size(1207, 671);
@@ -1397,16 +1439,44 @@ namespace Otlob {
 			button_SignOut->Visible = false;
 		}
 	}
-	cliext::vector<Restraunt^> restraunt_;
+			 cliext::vector<Restraunt^> restraunt_;
 	private: System::Void Button_ShowRs_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-        GlobalClass::showRestaurant = gcnew Otlob::ShowRestaurants();
 		if (comboBox_Address->Text != "Address/ Area")
 		{
+			/*Convert_strings temp;
+			string Governate = temp.Convert_System_to_std(comboBox1->Text);
+			string Address = temp.Convert_System_to_std(comboBox_Address->Text);
+			ifstream i("Restraunt.json");
+			json file;
+			i >> file;
+			json area = file[Governate][Address];
+			for (json::iterator it = area.begin(); it != area.end(); ++it)
+			{
+			std::string resturnt = it.key();
+			Restraunt^ r = gcnew Restraunt(temp.Convert_std_to_System(resturnt), temp.Convert_std_to_System(Governate), temp.Convert_std_to_System(Address), area[resturnt]["Deliver Time"]);
+			json mmPath = area[resturnt]["Food"]["Main Meal"];
+			json appPath = area[resturnt]["Food"]["Appetizers"];
+			json desPath = area[resturnt]["Food"]["Desert"];
+			json dPath = area[resturnt]["Food"]["Drinks"];
+			json ssPath = area[resturnt]["Food"]["Side Dishes"];
+			String^ rest_name= temp.Convert_std_to_System(resturnt);
+			json deliveryPath = area[resturnt]["Delivery boy"];
+			json ratePath = area[resturnt]["Rate"];
+			r->mainMeal = r->fill_MainMeal(mmPath, rest_name);
+			r->appetizers = r->fill_Appetizers(appPath, rest_name);
+			r->desserts = r->fill_Desserts(desPath ,rest_name);
+			r->drinks = r->fill_Drinks(dPath, rest_name);
+			r->sidedishes = r->fill_SideDishes(ssPath, rest_name);
+			r->deliveryBoys = r->fill_Delivery(deliveryPath);
+			r->setRate(ratePath);
+			restraunt_.push_back(r);
+			}*/
 			Globals::GlobalClass::governate = comboBox1->Text;
 			Globals::GlobalClass::address = comboBox_Address->Text;
+			GlobalClass::showRestaurant = gcnew Otlob::ShowRestaurants();
 			Globals::GlobalClass::showRestaurant->Show();
-            this->Hide();
+			this->Hide();
 		}
 	}
 	private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -1450,7 +1520,7 @@ namespace Otlob {
 			comboBox_Address->Items->Add((address));
 		}
 	}
-private: System::Void panel3_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-}
-};
+	private: System::Void panel3_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	}
+	};
 }

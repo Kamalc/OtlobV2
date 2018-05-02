@@ -50,6 +50,7 @@ Class Globals.GlobalClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Windows.Forms.Form AllRestaurants : Public, Static
     System.Windows.Forms.Form MyBills : Public, Static
     System.Windows.Forms.Form FoodsName : Public, Static
+    Int32 index : Public, Static
 Class Otlob.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -68,11 +69,14 @@ Class Otlob.FoodsName: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Otlob.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Otlob.OrderFood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.ShowRestaurants: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    Int32 index : Public
+    Int32 index : Public, Static
 Class Otlob.Home: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -81,9 +85,6 @@ Class Otlob.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Otlob.OrderFood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Otlob.AdminFormLogIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

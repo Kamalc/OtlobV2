@@ -5,6 +5,7 @@
 #include <cliext\vector>
 #include "Restraunt.h"
 #include"Convert_strings.h"
+#include"OrderFood.h"
 #include<fstream>
 namespace Otlob {
 
@@ -67,8 +68,8 @@ namespace Otlob {
 				delete components;
 			}
 		}
-    private: cliext::vector<Restraunt^> restaurants;
-	public: int index;
+    private:cliext::vector<Restraunt^> restaurants;
+	public: static int index;
 	//public: bunifuButton^ buttonRestaurant = gcnew bunifuButton();
 	private: System::Windows::Forms::Panel^  panel3;
 	protected:
@@ -1050,6 +1051,7 @@ private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::E
     GlobalClass::order->Show();
     this->Hide();
     MessageBox::Show(restaurants[index]->getName() + " " + index);
+    GlobalClass::index = index;
 }
 private: System::Void Panel_Header_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 }
@@ -1204,10 +1206,9 @@ private: System::Void ShowRestaurants_Load(System::Object^  sender, System::Even
 		perc->LineProgressThickness = 8;
 		perc->LineThickness = 8;
 		perc->Dock = System::Windows::Forms::DockStyle::Left;
-	//	index = i;
-		//MessageBox::Show(System::Convert::ToString(i));
 		button->Click += gcnew System::EventHandler(this, &ShowRestaurants::bunifuFlatButton5_Click);
 	}
 }
+         
 };
 }

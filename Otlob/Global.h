@@ -24,6 +24,7 @@ namespace Globals
 	public: static Form^ AllRestaurants;
 	public: static Form^ MyBills;
 	public: static Form^ FoodsName;
+    public: static int index;
 
     };
    
