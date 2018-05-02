@@ -1994,32 +1994,39 @@ private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::E
     ifstream i("Restraunt.json");
     json file;
     i >> file;
-    std::string  find="";
-    for (json::iterator it = file.begin(); it != file.end(); it++)
+bool find=0;
+for (json::iterator it = file.begin(); it != file.end(); it++)
     {
         json  Gov = file[it.key()];
         for (json::iterator it_2 = Gov.begin(); it_2 != Gov.end(); it_2++)
         {
             json Area = Gov[it_2.key()];
-            for (json::iterator it_3 = Area.begin(); it_3 != file.end(); it_3++)
+            for (json::iterator it_3 = Area.begin(); it_3 != Area.end(); it_3++)
             {
                 if (it_3.key() == RestaurantName)
                 {
-                    find = it.key() + "." + it_2.key() + "." + it_3.key();
+                    json Delivery_Boys = Area[it_3.key()]["Delivery boy"];
+                    std::string ssize = temp.Convert_System_to_std(Convert::ToString((Delivery_Boys.size()) + 1));
+                    MessageBox::Show(temp.Convert_std_to_System(it.key())+" * "+ temp.Convert_std_to_System(it_2.key())+" * "+temp.Convert_std_to_System(it_3.key()));
+                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ssize]["Name"]["First"]=First_Name;
+                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ssize]["Name"]["Last"] = Last_Name;
+                    file[it.key()][it_2.key()][it_3.key()]["Delivery boy"][ssize]["Phone"] = phone;
+                    std::ofstream o("Restraunt.json");
+                    o << std::setw(4) << file << std::endl;
+                    find = 1;
                     break;
                 }
             }
-            if (find != "")
+            if (find)
             {
                 break;
             }
         }
-        if (find != "")
+        if (find)
         {
             break;
         }
     }
-    MessageBox::Show(temp.Convert_std_to_System(find));
 }
 private: System::Void FirstName_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
 }
