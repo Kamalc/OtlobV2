@@ -1444,34 +1444,6 @@ private: Bunifu::Framework::UI::BunifuCheckbox^  checkBox_SeaFood;
 	{
 		if (comboBox_Address->Text != "Address/ Area")
 		{
-			/*Convert_strings temp;
-			string Governate = temp.Convert_System_to_std(comboBox1->Text);
-			string Address = temp.Convert_System_to_std(comboBox_Address->Text);
-			ifstream i("Restraunt.json");
-			json file;
-			i >> file;
-			json area = file[Governate][Address];
-			for (json::iterator it = area.begin(); it != area.end(); ++it)
-			{
-			std::string resturnt = it.key();
-			Restraunt^ r = gcnew Restraunt(temp.Convert_std_to_System(resturnt), temp.Convert_std_to_System(Governate), temp.Convert_std_to_System(Address), area[resturnt]["Deliver Time"]);
-			json mmPath = area[resturnt]["Food"]["Main Meal"];
-			json appPath = area[resturnt]["Food"]["Appetizers"];
-			json desPath = area[resturnt]["Food"]["Desert"];
-			json dPath = area[resturnt]["Food"]["Drinks"];
-			json ssPath = area[resturnt]["Food"]["Side Dishes"];
-			String^ rest_name= temp.Convert_std_to_System(resturnt);
-			json deliveryPath = area[resturnt]["Delivery boy"];
-			json ratePath = area[resturnt]["Rate"];
-			r->mainMeal = r->fill_MainMeal(mmPath, rest_name);
-			r->appetizers = r->fill_Appetizers(appPath, rest_name);
-			r->desserts = r->fill_Desserts(desPath ,rest_name);
-			r->drinks = r->fill_Drinks(dPath, rest_name);
-			r->sidedishes = r->fill_SideDishes(ssPath, rest_name);
-			r->deliveryBoys = r->fill_Delivery(deliveryPath);
-			r->setRate(ratePath);
-			restraunt_.push_back(r);
-			}*/
 			Globals::GlobalClass::governate = comboBox1->Text;
 			Globals::GlobalClass::address = comboBox_Address->Text;
 			GlobalClass::showRestaurant = gcnew Otlob::ShowRestaurants();

@@ -1,12 +1,13 @@
 #pragma once
 #include "Convert_strings.h"
 #include<cliext\vector>
+#include "Order.h"
 namespace Globals
 {
 	using namespace System;
 	using namespace System::Windows::Forms;
-	public ref class GlobalClass 
-    {
+	public ref class GlobalClass
+	{
 	public: static bool LogIn;
 	public: static String^ username;
 	public: static String^ governate;
@@ -24,9 +25,10 @@ namespace Globals
 	public: static Form^ AllRestaurants;
 	public: static Form^ MyBills;
 	public: static Form^ FoodsName;
-    public: static int index;
+	public: static Form^ FeedBack;
+	public: static Order^ makeOrder = gcnew Order;
+	public: static int index;
+	};
 
-    };
-   
 }
 

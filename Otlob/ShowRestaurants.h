@@ -1046,11 +1046,9 @@ private: System::Void button_Close_Click(System::Object^  sender, System::EventA
 }
 private: System::Void bunifuFlatButton5_Click(System::Object^  sender, System::EventArgs^  e) {
     bunifuButton^ button = (bunifuButton^)sender;
-    MessageBox::Show(button->Name + " ");
     index = Convert::ToInt32(button->Name);
     GlobalClass::order->Show();
     this->Hide();
-    MessageBox::Show(restaurants[index]->getName() + " " + index);
     GlobalClass::index = index;
 }
 private: System::Void Panel_Header_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {

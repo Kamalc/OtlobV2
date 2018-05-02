@@ -50,6 +50,8 @@ Class Globals.GlobalClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Windows.Forms.Form AllRestaurants : Public, Static
     System.Windows.Forms.Form MyBills : Public, Static
     System.Windows.Forms.Form FoodsName : Public, Static
+    System.Windows.Forms.Form FeedBack : Public, Static
+    Order makeOrder : Public, Static
     Int32 index : Public, Static
 Class Otlob.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

@@ -4,6 +4,5 @@ Order::Order()
 {
     totalPrice = 0;
     deliveryBoy = gcnew  Delivery_Boy("", "", "","","", "");
-    feedBack = "";
     paymentMethod = "";
 }

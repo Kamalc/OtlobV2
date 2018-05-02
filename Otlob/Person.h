@@ -16,4 +16,19 @@ public:
     Person();
     Person(String^ firstName_, String^ lastName_, String^ day_, String^ month_, String^ year_);
     Person(Person^ &obj);
+	String^ getFirstName() {
+		return firstName;
+	}
+	String^ getlastName() {
+		return lastName;
+	}
+	String^ getday() {
+		return day;
+	}
+	String^ getmonth() {
+		return month;
+	}
+	String^ getyear() {
+		return year;
+	}
 };

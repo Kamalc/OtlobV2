@@ -117,7 +117,6 @@ double Restraunt::setRate(json path)
 		ret += idx.value();
 		cntElements++;
 	}
-    MessageBox::Show(Convert::ToString(ret/ cntElements));
 	return rate=(cntElements == 0 ? 0.0 : ret/cntElements);
 }
 double Restraunt::getRate()

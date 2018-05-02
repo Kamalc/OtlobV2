@@ -1,6 +1,66 @@
 ﻿  AdminForm.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
   AdminFormLogIn.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  Admin_class.cpp
+  AllOffers.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  AllRestaurants.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  Appetizers.cpp
+  Bill.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  Convert_strings.cpp
+  Customer.cpp
+  Customer_Opinion.cpp
+  Delivery_Boy.cpp
+  Desserts.cpp
+  Drinks.cpp
+  Food.cpp
+  FoodsName.cpp
+  Global.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
   Home.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  MainMeal.cpp
+  MyBills.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  Order.cpp
   Generating Code...
+  Compiling...
+  OrderFood.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  pairr.cpp
+  Person.cpp
+  Profile.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  Restraunt.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  ShowRestaurants.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  SideDishes.cpp
+  SignIn.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  SignUp.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  User.cpp
+e:\project\o7a\otlobv2\otlob\Global.h(29): warning C4677: 'makeOrder': signature of non-private member contains assembly private type 'Order'
+  e:\project\o7a\otlobv2\otlob\Order.h(16): note: see declaration of 'Order'
+  Generating Code...
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
   Otlob.vcxproj -> E:\Project\O7A\OtlobV2\Debug\Otlob.exe
   Otlob.vcxproj -> E:\Project\O7A\OtlobV2\Debug\Otlob.pdb (Full PDB)

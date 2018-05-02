@@ -69,6 +69,9 @@ namespace Otlob {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(FeedBack::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->bunifuSeparator2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
+			this->richTextBox3 = (gcnew System::Windows::Forms::RichTextBox());
+			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->bunifuGradientPanel4 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
 			this->bunifuGradientPanel3 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
 			this->bunifuGradientPanel2 = (gcnew Bunifu::Framework::UI::BunifuGradientPanel());
@@ -77,9 +80,6 @@ namespace Otlob {
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->bunifuImageButton1 = (gcnew Bunifu::Framework::UI::BunifuImageButton());
-			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
-			this->bunifuSeparator2 = (gcnew Bunifu::Framework::UI::BunifuSeparator());
-			this->richTextBox3 = (gcnew System::Windows::Forms::RichTextBox());
 			this->panel1->SuspendLayout();
 			this->bunifuGradientPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -104,6 +104,72 @@ namespace Otlob {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(574, 423);
 			this->panel1->TabIndex = 6;
+			// 
+			// bunifuSeparator2
+			// 
+			this->bunifuSeparator2->BackColor = System::Drawing::Color::Transparent;
+			this->bunifuSeparator2->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
+			this->bunifuSeparator2->LineThickness = 12;
+			this->bunifuSeparator2->Location = System::Drawing::Point(13, 298);
+			this->bunifuSeparator2->Margin = System::Windows::Forms::Padding(6);
+			this->bunifuSeparator2->Name = L"bunifuSeparator2";
+			this->bunifuSeparator2->Size = System::Drawing::Size(550, 10);
+			this->bunifuSeparator2->TabIndex = 5;
+			this->bunifuSeparator2->Transparency = 255;
+			this->bunifuSeparator2->Vertical = false;
+			// 
+			// richTextBox3
+			// 
+			this->richTextBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(230)),
+				static_cast<System::Int32>(static_cast<System::Byte>(230)));
+			this->richTextBox3->Location = System::Drawing::Point(17, 47);
+			this->richTextBox3->Name = L"richTextBox3";
+			this->richTextBox3->Size = System::Drawing::Size(540, 242);
+			this->richTextBox3->TabIndex = 4;
+			this->richTextBox3->Text = L"";
+			// 
+			// bunifuFlatButton1
+			// 
+			this->bunifuFlatButton1->Activecolor = System::Drawing::Color::Maroon;
+			this->bunifuFlatButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->bunifuFlatButton1->BorderRadius = 0;
+			this->bunifuFlatButton1->ButtonText = L"Submit";
+			this->bunifuFlatButton1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->bunifuFlatButton1->DisabledColor = System::Drawing::Color::Gray;
+			this->bunifuFlatButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->Iconcolor = System::Drawing::Color::Transparent;
+			this->bunifuFlatButton1->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton1.Iconimage")));
+			this->bunifuFlatButton1->Iconimage_right = nullptr;
+			this->bunifuFlatButton1->Iconimage_right_Selected = nullptr;
+			this->bunifuFlatButton1->Iconimage_Selected = nullptr;
+			this->bunifuFlatButton1->IconMarginLeft = 0;
+			this->bunifuFlatButton1->IconMarginRight = 0;
+			this->bunifuFlatButton1->IconRightVisible = true;
+			this->bunifuFlatButton1->IconRightZoom = 0;
+			this->bunifuFlatButton1->IconVisible = true;
+			this->bunifuFlatButton1->IconZoom = 90;
+			this->bunifuFlatButton1->IsTab = false;
+			this->bunifuFlatButton1->Location = System::Drawing::Point(134, 320);
+			this->bunifuFlatButton1->Margin = System::Windows::Forms::Padding(6);
+			this->bunifuFlatButton1->Name = L"bunifuFlatButton1";
+			this->bunifuFlatButton1->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->OnHovercolor = System::Drawing::Color::Maroon;
+			this->bunifuFlatButton1->OnHoverTextColor = System::Drawing::Color::White;
+			this->bunifuFlatButton1->selected = false;
+			this->bunifuFlatButton1->Size = System::Drawing::Size(278, 88);
+			this->bunifuFlatButton1->TabIndex = 2;
+			this->bunifuFlatButton1->Text = L"Submit";
+			this->bunifuFlatButton1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
+			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->Click += gcnew System::EventHandler(this, &FeedBack::bunifuFlatButton1_Click);
 			// 
 			// bunifuGradientPanel4
 			// 
@@ -226,71 +292,6 @@ namespace Otlob {
 			this->bunifuImageButton1->Zoom = 10;
 			this->bunifuImageButton1->Click += gcnew System::EventHandler(this, &FeedBack::bunifuImageButton1_Click);
 			// 
-			// bunifuFlatButton1
-			// 
-			this->bunifuFlatButton1->Activecolor = System::Drawing::Color::Maroon;
-			this->bunifuFlatButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuFlatButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuFlatButton1->BorderRadius = 0;
-			this->bunifuFlatButton1->ButtonText = L"Submit";
-			this->bunifuFlatButton1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuFlatButton1->DisabledColor = System::Drawing::Color::Gray;
-			this->bunifuFlatButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bunifuFlatButton1->Iconcolor = System::Drawing::Color::Transparent;
-			this->bunifuFlatButton1->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuFlatButton1.Iconimage")));
-			this->bunifuFlatButton1->Iconimage_right = nullptr;
-			this->bunifuFlatButton1->Iconimage_right_Selected = nullptr;
-			this->bunifuFlatButton1->Iconimage_Selected = nullptr;
-			this->bunifuFlatButton1->IconMarginLeft = 0;
-			this->bunifuFlatButton1->IconMarginRight = 0;
-			this->bunifuFlatButton1->IconRightVisible = true;
-			this->bunifuFlatButton1->IconRightZoom = 0;
-			this->bunifuFlatButton1->IconVisible = true;
-			this->bunifuFlatButton1->IconZoom = 90;
-			this->bunifuFlatButton1->IsTab = false;
-			this->bunifuFlatButton1->Location = System::Drawing::Point(134, 320);
-			this->bunifuFlatButton1->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
-			this->bunifuFlatButton1->Name = L"bunifuFlatButton1";
-			this->bunifuFlatButton1->Normalcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->bunifuFlatButton1->OnHovercolor = System::Drawing::Color::Maroon;
-			this->bunifuFlatButton1->OnHoverTextColor = System::Drawing::Color::White;
-			this->bunifuFlatButton1->selected = false;
-			this->bunifuFlatButton1->Size = System::Drawing::Size(278, 88);
-			this->bunifuFlatButton1->TabIndex = 2;
-			this->bunifuFlatButton1->Text = L"Submit";
-			this->bunifuFlatButton1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(102)));
-			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			// 
-			// bunifuSeparator2
-			// 
-			this->bunifuSeparator2->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuSeparator2->LineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(105)),
-				static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(105)));
-			this->bunifuSeparator2->LineThickness = 8;
-			this->bunifuSeparator2->Location = System::Drawing::Point(13, 298);
-			this->bunifuSeparator2->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
-			this->bunifuSeparator2->Name = L"bunifuSeparator2";
-			this->bunifuSeparator2->Size = System::Drawing::Size(550, 10);
-			this->bunifuSeparator2->TabIndex = 5;
-			this->bunifuSeparator2->Transparency = 255;
-			this->bunifuSeparator2->Vertical = false;
-			// 
-			// richTextBox3
-			// 
-			this->richTextBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(230)),
-				static_cast<System::Int32>(static_cast<System::Byte>(230)));
-			this->richTextBox3->Location = System::Drawing::Point(17, 47);
-			this->richTextBox3->Name = L"richTextBox3";
-			this->richTextBox3->Size = System::Drawing::Size(540, 242);
-			this->richTextBox3->TabIndex = 4;
-			this->richTextBox3->Text = L"";
-			// 
 			// FeedBack
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -316,6 +317,9 @@ namespace Otlob {
 #pragma endregion
 
 private: System::Void bunifuImageButton1_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
+}
+private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();
 }
 };
